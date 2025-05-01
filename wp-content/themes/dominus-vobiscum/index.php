@@ -13,8 +13,6 @@
  */
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +24,14 @@
 <style>
 html,
 body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  overflow-x: hidden;
 }
 
-@media (max-width: 991.98px) {
+/* Ubah breakpoint menjadi mobile-only (di bawah 768px) */
+@media (max-width: 767.98px) {
   .offcanvas-collapse {
     position: fixed;
-    top: 72px; /* Height of navbar */
+    top: 0;
     bottom: 0;
     left: 100%;
     width: 100%;
@@ -49,6 +48,18 @@ body {
     visibility: visible;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
+  }
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Sembunyikan dropdown menu di mobile */
+  .navbar .dropdown-menu {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
   }
 }
 
@@ -99,22 +110,23 @@ body {
     <?php wp_body_open(); ?>
     <div class="site" id="page">
     <header class="sticky-top">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+  <!-- Ubah expand breakpoint ke md (768px) -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light py-3">
     <div class="container">
-      <!-- Brand / Logo -->
       <a class="navbar-brand" href="/">
         <span class="site-logo-text">ini logo</span>
       </a>
-      <!-- Toggler -->
-      <button class="navbar-toggler border-0" type="button"
+      
+      <!-- Toggler hanya muncul di mobile -->
+      <button class="navbar-toggler border-0 d-md-none" type="button"
               data-toggle="offcanvas" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Collapse -->
+
+      <!-- Menu desktop akan muncul otomatis di tablet -->
       <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
-        <!-- Nav menu ke kanan -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/">Home
@@ -147,7 +159,6 @@ body {
   </nav>
 </header>
 
-
         <div class="container">
             <div class="row">
                 <p>Hello World!!</p>
@@ -160,4 +171,35 @@ body {
     </div>
     <?php wp_footer(); ?>
 </body>
+
+<script>
+jQuery(function($) {
+  var $navbar      = $('.navbar'),
+      $offcanvas   = $('.offcanvas-collapse'),
+      $toggler     = $('.navbar-toggler');
+
+  function positionOffcanvas() {
+    // Hanya di mobile (<768px)
+    if ($(window).width() >= 768) {
+      $offcanvas.removeAttr('style');
+      return;
+    }
+    if ($navbar.length && $offcanvas.length) {
+      var navbarBottom = $navbar[0].getBoundingClientRect().bottom;
+      $offcanvas.css({
+        top: navbarBottom + 'px',
+        height: 'calc(100vh - ' + navbarBottom + 'px)'
+      });
+    }
+  }
+
+  // Inisialisasi
+  positionOffcanvas();
+
+  // Event listeners
+  $(window).on('resize', positionOffcanvas);
+  $toggler.on('click', positionOffcanvas);
+});
+</script>
+
 </html>
