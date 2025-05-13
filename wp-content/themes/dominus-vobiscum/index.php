@@ -172,34 +172,4 @@ body {
     <?php wp_footer(); ?>
 </body>
 
-<script>
-jQuery(function($) {
-  var $navbar      = $('.navbar'),
-      $offcanvas   = $('.offcanvas-collapse'),
-      $toggler     = $('.navbar-toggler');
-
-  function positionOffcanvas() {
-    // Hanya di mobile (<768px)
-    if ($(window).width() >= 768) {
-      $offcanvas.removeAttr('style');
-      return;
-    }
-    if ($navbar.length && $offcanvas.length) {
-      var navbarBottom = $navbar[0].getBoundingClientRect().bottom;
-      $offcanvas.css({
-        top: navbarBottom + 'px',
-        height: 'calc(100vh - ' + navbarBottom + 'px)'
-      });
-    }
-  }
-
-  // Inisialisasi
-  positionOffcanvas();
-
-  // Event listeners
-  $(window).on('resize', positionOffcanvas);
-  $toggler.on('click', positionOffcanvas);
-});
-</script>
-
 </html>
