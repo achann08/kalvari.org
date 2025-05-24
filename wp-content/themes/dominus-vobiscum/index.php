@@ -155,7 +155,6 @@ header.sticky-top {
                 <span class="site-logo-text">ini logo</span>
               </a>
               
-              <!-- Toggler hanya muncul di mobile -->
               <button class="navbar-toggler border-0 d-md-none" type="button"
                       data-toggle="offcanvas" data-target="#navbarSupportedContent"
                       aria-controls="navbarSupportedContent"
@@ -168,7 +167,7 @@ header.sticky-top {
                     wp_nav_menu(array(
                         'theme_location'    => 'dominus_vobiscum_nav_menu',
                         'container'         => false,
-                        'menu_class'        => 'navbar-nav ml-auto text-white',
+                        'menu_class'        => 'navbar-nav ml-auto',
                         'depth'             => 2,
                         'walker'            => new WP_Bootstrap_Navwalker(),
                         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback'
@@ -271,19 +270,41 @@ header.sticky-top {
     <?php wp_footer(); ?>
     <script type="text/javascript">
         jQuery(document).ready(function($){
-          // Target section navbar khusus
-          
-          // Set distance for scroll effect
-          var scrollDistance = 50;
+          const scrollDistance = 50;
+          const header = $('header');
+          const navLinks = $('.navbar-nav .nav-link');
+          const navbarToggler = $('.navbar-toggler');
 
-          // Scroll event untuk navbar section
-          $(window).on("scroll", function() {
-            if ($(this).scrollTop() > scrollDistance) {
-              $("header").removeClass("bg-transparent").addClass("bg-light");
+          function updateNavbarState() {
+            const isScrolled = $(window).scrollTop() > scrollDistance;
+            const isMenuOpen = $('.offcanvas-collapse').hasClass('open');
+
+            if(isMenuOpen || isScrolled) {
+              header.removeClass("bg-transparent").addClass("bg-light");
+              navLinks.removeClass('text-white');
             } else {
-              $("header").removeClass("bg-light").addClass("bg-transparent");
+              header.removeClass("bg-light").addClass("bg-transparent");
+              navLinks.addClass('text-white');
             }
+            
+            // Handle khusus untuk mobile saat menu terbuka
+            if(isMenuOpen) {
+              header.addClass('bg-light');
+              navLinks.removeClass('text-white');
+            }
+          }
+
+          // Event untuk scroll
+          $(window).on("scroll", updateNavbarState);
+          
+          // Event khusus untuk tombol toggle
+          navbarToggler.on('click', function() {
+            // Delay sedikit untuk menunggu class 'open' ditambahkan
+            setTimeout(updateNavbarState, 10);
           });
+
+          // Inisialisasi pertama kali
+          updateNavbarState();
         });
     </script>
 </body>
