@@ -4,6 +4,6 @@ import "../css/style.scss";
 
 // const testjs = new dc_testjs();
 
-import dc_offcanvas from "./modules/offcanvas.js";
+// import dc_offcanvas from "./modules/offcanvas.js";
 
-const offcanvas = new dc_offcanvas();
+// const offcanvas = new dc_offcanvas();

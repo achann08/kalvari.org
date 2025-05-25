@@ -28,7 +28,7 @@ body {
 }
 
 header {
-    transition: background-color 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 /* Ubah breakpoint menjadi mobile-only (di bawah 768px) */
@@ -103,12 +103,6 @@ header {
   color: #343a40;
 }
 
-.bg-purple { background-color: #6f42c1; }
-
-.lh-100 { line-height: 1; }
-.lh-125 { line-height: 1.25; }
-.lh-150 { line-height: 1.5; }
-
 /* jumbotron */
 .img-cover {
   width: 100%;
@@ -143,170 +137,292 @@ header.sticky-top {
   z-index: 1001;
 }
 
+/* hamburger menu animation css */
+
+:root {
+  --toggler-color: #fff;
+}
+
+.navbar-toggler{
+  cursor: pointer;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0 0 0.15em 0.3em;
+  border-width: 2px !important;
+
+  .navbar-toggler-inner,
+  .navbar-toggler-inner::before,
+  .navbar-toggler-inner::after{
+    width: 1em;
+    height: 0.16em;
+    background-color: var(--toggler-color);
+    transition: all 0.3s ease; 
+    position: absolute;
+  }
+
+  .navbar-toggler-inner::before{
+    content: "";
+    display: block;
+    top: -0.3em;
+  }
+
+  .navbar-toggler-inner::after{
+    content: "";
+    display: block;
+    bottom: -0.3em;
+  }
+
+  .navbar-toggler-inner{
+    transition: 0.2s;
+    transform: rotate(0deg);
+  }
+}
+
+.navbar-toggler.active{
+
+  .navbar-toggler-inner{
+    transition: 0.2s;
+    transform: rotate(405deg);
+  }
+
+  .navbar-toggler-inner::before{
+    top: 0;
+    opacity: 0;
+  }
+
+  .navbar-toggler-inner::after{
+    bottom: 0;
+    transform: rotate(-90deg);
+  }
+
+}
+
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
 </style>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="site" id="page">
       <header class="fixed-top bg-transparent">
-          <!-- Ubah expand breakpoint ke md (768px) -->
-          <nav class="navbar navbar-expand-md navbar-light py-3">
-            <div class="container">
-              <a class="navbar-brand" href="/">
-                <span class="site-logo-text">ini logo</span>
-              </a>
-              
-              <button class="navbar-toggler border-0 d-md-none" type="button"
-                      data-toggle="offcanvas" data-target="#navbarSupportedContent"
-                      aria-controls="navbarSupportedContent"
-                      aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
-                  <?php
-                    wp_nav_menu(array(
-                        'theme_location'    => 'dominus_vobiscum_nav_menu',
-                        'container'         => false,
-                        'menu_class'        => 'navbar-nav ml-auto',
-                        'depth'             => 2,
-                        'walker'            => new WP_Bootstrap_Navwalker(),
-                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback'
-                    ));
-                  ?>
+        <nav class="main-menu navbar navbar-expand-md navbar-light py-3">
+          <div class="container">
+            <?php
+              $custom_logo_id = get_theme_mod('custom_logo');
+              $logo_img = $custom_logo_id ? wp_get_attachment_image($custom_logo_id, 'full', false, ['class'=>'custom-logo']) : '';
+            ?>
+            <a href="<?php echo esc_url( home_url('/')); ?>" class="navbar-brand d-flex align-items-center">
+              <?php if ( $logo_img ): ?>
+                <?php echo $logo_img; ?>
+              <?php endif; ?>
+              <div class="site-branding-text ml-2">
+                <span class="site-title h4 mb-0 text-white"><?php bloginfo('name'); ?></span>
+                <small class="site-description d-block"><?php bloginfo('description'); ?></small>
               </div>
+            </a>
+            <button class="navbar-toggler border border-white d-md-none" type="button"
+                data-toggle="offcanvas" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+              <div class="navbar-toggler-inner"></div>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
+                <?php
+                  wp_nav_menu(array(
+                      'theme_location'    => 'dominus_vobiscum_nav_menu',
+                      'container'         => '',
+                      'menu_class'        => 'navbar-nav mx-auto mb-2 mb-lg-0',
+                      'depth'             => 4,
+                      'walker'            => new WP_Bootstrap_Navwalker(),
+                      'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback'
+                  ));
+                ?>
             </div>
-          </nav>
-        </header>
-        <section id="jumbotron-section" class="jumbotron jumbotron-fluid position-relative">
-          <div class="jumbotron-overlay"></div>
-          <img
-            src="https://images.unsplash.com/photo-1583364486567-ce2e045676e9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            class="img-cover"
-            alt="Jumbotron Background"
-          >
-          <div class="container jumbotron-content">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">
-              This is a modified jumbotron that occupies the entire horizontal space of its parent.
-            </p>
+          </div>
+        </nav>
+      </header>
+
+      <section id="jumbotron-section" class="jumbotron jumbotron-fluid position-relative">
+        <div class="jumbotron-overlay"></div>
+        <img
+          src="https://images.unsplash.com/photo-1583364486567-ce2e045676e9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="img-cover"
+          alt="Jumbotron Background"
+        >
+        <div class="container jumbotron-content">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">
+            This is a modified jumbotron that occupies the entire horizontal space of its parent.
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla orci mauris, elementum a hendrerit non, dapibus in ante. Vestibulum dictum, ex non condimentum porta, eros orci ullamcorper purus, non tristique neque turpis quis nulla. Quisque interdum magna sit amet nisl convallis tempus. Nam molestie venenatis ligula eu sagittis. Donec tincidunt facilisis ipsum non dapibus. Aliquam feugiat eget est eu faucibus. Sed pretium convallis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras tincidunt dictum pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis tincidunt erat nec erat elementum, ut tincidunt arcu imperdiet. Ut maximus varius ligula, et consequat libero mattis sit amet.</p>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <section class="border-top bg-light">
+          <div class="container py-5">
+            <div class="row">
+              <?php if (is_active_sidebar('kreasi-sidebar-footer1')) : ?>
+                <?php dynamic_sidebar('kreasi-sidebar-footer1'); ?>
+              <?php endif; ?>
+            </div>
+            <div class="row">
+              <?php if (is_active_sidebar('kreasi-sidebar-footer2')) : ?>
+                <?php dynamic_sidebar('kreasi-sidebar-footer2'); ?>
+              <?php endif; ?>
+            </div>
           </div>
         </section>
-
-        <div class="container">
+        <section class="border-top pt-3 bg-dark">
+          <div class="container">
             <div class="row">
-              <div class="col-12">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla orci mauris, elementum a hendrerit non, dapibus in ante. Vestibulum dictum, ex non condimentum porta, eros orci ullamcorper purus, non tristique neque turpis quis nulla. Quisque interdum magna sit amet nisl convallis tempus. Nam molestie venenatis ligula eu sagittis. Donec tincidunt facilisis ipsum non dapibus. Aliquam feugiat eget est eu faucibus. Sed pretium convallis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras tincidunt dictum pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis tincidunt erat nec erat elementum, ut tincidunt arcu imperdiet. Ut maximus varius ligula, et consequat libero mattis sit amet.</p>
-                <p>Maecenas non quam molestie, ultricies orci a, placerat lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem commodo mauris semper venenatis at et arcu. Fusce efficitur augue eu lectus posuere, vel faucibus quam luctus. Duis tellus nisi, tincidunt sed ullamcorper at, interdum sed tortor. Aliquam et dolor eleifend, iaculis arcu eu, blandit felis. In vel lectus in odio convallis bibendum eu vulputate tortor. Vivamus vel neque a erat lobortis aliquet fringilla at sem. Donec sollicitudin eget risus id vulputate. Praesent varius condimentum est vel gravida. Praesent tortor massa, tempus sed condimentum non, semper in lacus. Aenean ut commodo tellus. Etiam sed urna volutpat, convallis ante vitae, malesuada nunc. Cras convallis dignissim luctus. Sed ultrices volutpat nibh in dapibus. Aliquam vitae metus lectus.</p>
-                <p>Phasellus interdum eros diam, ac ultrices est lacinia vitae. Nam nisl nunc, dapibus id laoreet et, suscipit sed est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel augue tristique, viverra lacus vel, sodales purus. Proin hendrerit luctus porttitor. Phasellus ornare dolor at odio elementum rhoncus. Aliquam aliquet risus purus, ut pellentesque tellus blandit sed. Pellentesque sit amet nisi finibus, gravida massa non, bibendum nunc. Aliquam fringilla sed mauris a congue.</p>
-                <p>Vivamus facilisis interdum mollis. Nunc ut efficitur sapien, sit amet vulputate felis. Integer accumsan, justo vitae malesuada elementum, odio justo pharetra augue, ultricies aliquet elit magna ut magna. Nam mollis erat ac imperdiet hendrerit. Duis fringilla, elit ut ultricies ornare, mi nisi vestibulum dui, non congue mi orci eget massa. Nunc imperdiet mi ac consequat tincidunt. Sed volutpat vel purus eget ultrices. Ut eu odio ac diam auctor gravida quis imperdiet nisi. Etiam rutrum orci eu metus iaculis bibendum. Curabitur at ultrices lacus, commodo efficitur dolor.</p>
-                <p>Suspendisse rhoncus maximus elit nec sagittis. Fusce ac eros leo. Etiam tincidunt nunc at vulputate sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum a vehicula felis. Suspendisse potenti. Sed ac faucibus nisl, sed tincidunt risus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla orci mauris, elementum a hendrerit non, dapibus in ante. Vestibulum dictum, ex non condimentum porta, eros orci ullamcorper purus, non tristique neque turpis quis nulla. Quisque interdum magna sit amet nisl convallis tempus. Nam molestie venenatis ligula eu sagittis. Donec tincidunt facilisis ipsum non dapibus. Aliquam feugiat eget est eu faucibus. Sed pretium convallis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras tincidunt dictum pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis tincidunt erat nec erat elementum, ut tincidunt arcu imperdiet. Ut maximus varius ligula, et consequat libero mattis sit amet.</p>
-                <p>Maecenas non quam molestie, ultricies orci a, placerat lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem commodo mauris semper venenatis at et arcu. Fusce efficitur augue eu lectus posuere, vel faucibus quam luctus. Duis tellus nisi, tincidunt sed ullamcorper at, interdum sed tortor. Aliquam et dolor eleifend, iaculis arcu eu, blandit felis. In vel lectus in odio convallis bibendum eu vulputate tortor. Vivamus vel neque a erat lobortis aliquet fringilla at sem. Donec sollicitudin eget risus id vulputate. Praesent varius condimentum est vel gravida. Praesent tortor massa, tempus sed condimentum non, semper in lacus. Aenean ut commodo tellus. Etiam sed urna volutpat, convallis ante vitae, malesuada nunc. Cras convallis dignissim luctus. Sed ultrices volutpat nibh in dapibus. Aliquam vitae metus lectus.</p>
-                <p>Phasellus interdum eros diam, ac ultrices est lacinia vitae. Nam nisl nunc, dapibus id laoreet et, suscipit sed est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel augue tristique, viverra lacus vel, sodales purus. Proin hendrerit luctus porttitor. Phasellus ornare dolor at odio elementum rhoncus. Aliquam aliquet risus purus, ut pellentesque tellus blandit sed. Pellentesque sit amet nisi finibus, gravida massa non, bibendum nunc. Aliquam fringilla sed mauris a congue.</p>
-                <p>Vivamus facilisis interdum mollis. Nunc ut efficitur sapien, sit amet vulputate felis. Integer accumsan, justo vitae malesuada elementum, odio justo pharetra augue, ultricies aliquet elit magna ut magna. Nam mollis erat ac imperdiet hendrerit. Duis fringilla, elit ut ultricies ornare, mi nisi vestibulum dui, non congue mi orci eget massa. Nunc imperdiet mi ac consequat tincidunt. Sed volutpat vel purus eget ultrices. Ut eu odio ac diam auctor gravida quis imperdiet nisi. Etiam rutrum orci eu metus iaculis bibendum. Curabitur at ultrices lacus, commodo efficitur dolor.</p>
-                <p>Suspendisse rhoncus maximus elit nec sagittis. Fusce ac eros leo. Etiam tincidunt nunc at vulputate sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum a vehicula felis. Suspendisse potenti. Sed ac faucibus nisl, sed tincidunt risus.</p>
+              <div class="col-12 text-center">
+                <p class="text-white">
+                  <?php
+                    $copyright_text = get_theme_mod('set_copyright', '© ' . '[date format="Y"] - Copyright Your Company Name - All Rights Reserved');
+                    echo do_shortcode($copyright_text);
+                  ?>
+                </p>
               </div>
+              <!-- <div class="col-sm-8">
+                <ul class="list-unstyled d-flex justify-content-center justify-content-sm-end flex-wrap">
+                  <li class="ms-3">
+                    <a class="link-dark" href="#">
+                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
+                        <i class="fas fa-square fa-stack-2x"></i>
+                        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="ms-3">
+                    <a class="link-dark" href="#">
+                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
+                        <i class="fas fa-square fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="ms-3">
+                    <a class="link-dark" href="#">
+                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
+                        <i class="fas fa-square fa-stack-2x"></i>
+                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div> -->
             </div>
-        </div>
-        <footer>
-          <section class="border-top bg-light">
-            <div class="container py-5">
-              <div class="row">
-                <?php if (is_active_sidebar('kreasi-sidebar-footer1')) : ?>
-                  <?php dynamic_sidebar('kreasi-sidebar-footer1'); ?>
-                <?php endif; ?>
-              </div>
-              <div class="row">
-                <?php if (is_active_sidebar('kreasi-sidebar-footer2')) : ?>
-                  <?php dynamic_sidebar('kreasi-sidebar-footer2'); ?>
-                <?php endif; ?>
-              </div>
-            </div>
-          </section>
-          <section class="border-top pt-3 bg-dark">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 text-center">
-                  <p class="text-white">
-                    <?php
-                      $copyright_text = get_theme_mod('set_copyright', '© ' . '[date format="Y"] - Copyright Your Company Name - All Rights Reserved');
-                      echo do_shortcode($copyright_text);
-                    ?>
-                  </p>
-                </div>
-                <!-- <div class="col-sm-8">
-                  <ul class="list-unstyled d-flex justify-content-center justify-content-sm-end flex-wrap">
-                    <li class="ms-3">
-                      <a class="link-dark" href="#">
-                        <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                          <i class="fas fa-square fa-stack-2x"></i>
-                          <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
-                        </span>
-                      </a>
-                    </li>
-                    <li class="ms-3">
-                      <a class="link-dark" href="#">
-                        <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                          <i class="fas fa-square fa-stack-2x"></i>
-                          <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                        </span>
-                      </a>
-                    </li>
-                    <li class="ms-3">
-                      <a class="link-dark" href="#">
-                        <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                          <i class="fas fa-square fa-stack-2x"></i>
-                          <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div> -->
-              </div>
-            </div>
-          </section>
-        </footer>
+          </div>
+        </section>
+      </footer>
     </div>
     <?php wp_footer(); ?>
     <script type="text/javascript">
-        jQuery(document).ready(function($){
-          const scrollDistance = 50;
-          const header = $('header');
-          const navLinks = $('.navbar-nav .nav-link');
-          const navbarToggler = $('.navbar-toggler');
+      jQuery(document).ready(function($) {
+        // Konfigurasi navbar
+        const scrollDistance = 50;
+        const header = $('header');
+        const navLinks = $('.navbar-nav .nav-link');
+        const navbarToggler = $('.navbar-toggler');
+        const offcanvas = $('.offcanvas-collapse');
+        const navbar = $('.navbar');
+        const siteTitle = $('.site-title');
 
-          function updateNavbarState() {
+        // Fungsi update tampilan navbar
+        function updateNavbarState() {
             const isScrolled = $(window).scrollTop() > scrollDistance;
-            const isMenuOpen = $('.offcanvas-collapse').hasClass('open');
+            const isMenuOpen = offcanvas.hasClass('open');
 
             if(isMenuOpen || isScrolled) {
-              header.removeClass("bg-transparent").addClass("bg-light");
-              navLinks.removeClass('text-white');
+                header.removeClass("bg-transparent").addClass("bg-light");
+                siteTitle.removeClass("text-white").addClass("text-dark")
+                navbarToggler.removeClass("border-white").addClass("border-dark")
+                document.documentElement.style.setProperty('--toggler-color', '#343a40');
+                navLinks.removeClass("text-white");
             } else {
-              header.removeClass("bg-light").addClass("bg-transparent");
-              navLinks.addClass('text-white');
+                header.removeClass("bg-light").addClass("bg-transparent");
+                siteTitle.removeClass("text-dark").addClass("text-white")
+                navbarToggler.removeClass("border-dark").addClass("border-white")
+                document.documentElement.style.setProperty('--toggler-color', '#fff');
+                navLinks.addClass("text-white");
             }
             
             // Handle khusus untuk mobile saat menu terbuka
             if(isMenuOpen) {
-              header.addClass('bg-light');
-              navLinks.removeClass('text-white');
+                header.addClass('bg-light');
+                navLinks.removeClass('text-white');
             }
-          }
+        }
 
-          // Event untuk scroll
-          $(window).on("scroll", updateNavbarState);
-          
-          // Event khusus untuk tombol toggle
-          navbarToggler.on('click', function() {
-            // Delay sedikit untuk menunggu class 'open' ditambahkan
-            setTimeout(updateNavbarState, 10);
-          });
+        // Fungsi toggle offcanvas
+        function toggleOffcanvas() {
+            offcanvas.toggleClass('open');
+        }
 
-          // Inisialisasi pertama kali
-          updateNavbarState();
+        // Fungsi positioning offcanvas
+        function positionOffcanvas() {
+            // Hanya berlaku untuk mobile (<768px)
+            if ($(window).width() >= 768) {
+                offcanvas.removeAttr('style');
+                return;
+            }
+
+            if (navbar.length && offcanvas.length) {
+                const navbarBottom = navbar[0].getBoundingClientRect().bottom;
+                offcanvas.css({
+                    top: navbarBottom + 'px',
+                    height: `calc(100vh - ${navbarBottom}px)`
+                });
+            }
+        }
+
+        // Event handlers
+        $(window).on("scroll", updateNavbarState);
+        $('[data-toggle="offcanvas"]').on('click', toggleOffcanvas);
+        $(window).on('resize', positionOffcanvas);
+        
+        navbarToggler.on('click', function() {
+          navbarToggler.toggleClass('active');
+          positionOffcanvas();
+          setTimeout(updateNavbarState, 10);
         });
-    </script>
+
+        // Inisialisasi awal
+        updateNavbarState();
+        positionOffcanvas();
+
+        $('.main-menu .dropdown-toggle').on('click', function (e) {
+          e.preventDefault();
+
+          $(this).closest('.menu-item-has-children').
+          siblings('.menu-item-has-children').
+          find('.dropdown-menu').removeClass('show');
+          
+          var dropdownMenu = $(this).closest('.menu-item-has-children').find('.dropdown-menu');
+          var mainDropdown = dropdownMenu.first();
+
+          mainDropdown.toggleClass('show', function() {
+              if ($(this).css("display") == 'none') {
+                  dropdownMenu.hide();
+              }
+          });                       
+      });
+      $(document).on('click', function (e) {
+          if (!$(e.target).closest('.main-menu').length) {
+              $('.dropdown-menu').removeClass('show');
+          }
+      });
+    });
+  </script>
 </body>
 
 </html>

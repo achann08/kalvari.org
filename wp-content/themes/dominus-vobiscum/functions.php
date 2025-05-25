@@ -32,5 +32,32 @@ function dominus_vobiscum_config(){
 		)
 	);
 
+	add_theme_support( 'custom-logo', array(
+		'height' 		=> 160,
+		'width'			=> 160,
+		'flex_height'	=> true,
+		'flex_width'	=> true
+	));
 }
 add_action( 'after_setup_theme', 'dominus_vobiscum_config', 0 );
+
+
+add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth){
+	if(in_array('menu-item-has-children', $item->classes)){
+		$args->before = '<div class="btn-group" style="flex-direction: row-reverse;">';
+		$atts['class'] .= ' dropdown-toggle dropdown-toggle-split';
+		$atts['data-toggle'] = 'dropdown';
+		$atts['aria-haspopup'] = 'true';
+		$atts['aria-expanded'] = 'false';
+	}
+	return $atts;
+}, 10, 4);
+
+add_filter('nav_menu_item_title', function($title, $item, $args, $depth){
+	if(in_array('menu-item-has-children', $item->classes)){
+		$title = '<span class="sr-only">' . esc_html__( 'Toggle Dropdown', 'your-text-domain' ) . '</span>';
+		$title .= '<a href="' . esc_url( $item->url ) . '" class="nav-link">' . esc_html( $item->title ) . '</a>';
+		$args->after = '</div>';
+	}
+	return $title;
+}, 10, 4);
