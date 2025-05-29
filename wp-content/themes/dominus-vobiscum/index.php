@@ -362,13 +362,30 @@ header.sticky-top {
           alt="<?php echo get_theme_mod('set_homepage_banner_alt'); ?>"
         >
         <div class="container jumbotron-content">
-          <h1 class="display-4"><?php echo get_theme_mod('set_homepage_banner_title'); ?></h1>
-          <p class="lead">
-            <?php echo get_theme_mod('set_homepage_banner_description') ?>
-          </p>
-          <div class="d-flex mt-4">
-            <a href="<?php echo get_permalink(get_theme_mod('set_banner_buttons')[0]["link_target"]); ?>" class="btn btn-outline-light rounded-pill w-25 p-2 glass-button mx-2"><?php echo get_theme_mod('set_banner_buttons')[0]["link_text"]; ?></a>
-            <a href="<?php echo get_permalink(get_theme_mod('set_banner_buttons')[1]["link_target"]); ?>" class="btn btn-outline-light rounded-pill w-25 p-2 glass-button mx-2"><?php echo get_theme_mod('set_banner_buttons')[1]["link_text"] ?></a>
+          <div class="row">
+            <div class="col-12 col-lg-8 col-md-12">
+              <h1 class="display-5"><?php echo get_theme_mod('set_homepage_banner_title'); ?></h1>
+              <?php 
+                $desc = wp_strip_all_tags( get_theme_mod('set_homepage_banner_description') );
+                if ( $desc ) {
+                  echo '<p class="lead">'. esc_html( $desc ) .'</p>';
+                }
+              ?>
+              <div class="d-md-inline-flex">
+                <div class="col-12 col-md-12 col-sm-12 mb-2 px-0 mr-3">
+                  <a href="<?php echo get_permalink( get_theme_mod('set_banner_buttons')[0]['link_target'] ); ?>"
+                    class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
+                    <?php echo get_theme_mod('set_banner_buttons')[0]['link_text']; ?>
+                  </a>
+                </div>
+                <div class="col-12 col-md-12 col-sm-12 mb-2 px-0">
+                  <a href="<?php echo get_permalink( get_theme_mod('set_banner_buttons')[1]['link_target'] ); ?>"
+                    class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
+                    <?php echo get_theme_mod('set_banner_buttons')[1]['link_text']; ?>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
