@@ -202,6 +202,116 @@ header.sticky-top {
   width: auto;
 }
 
+/* Navbar Styles */
+.main-menu {
+    padding: 0;
+}
+
+.main-menu ul {
+    padding: 0;
+    margin: 0 0 0 -1.1px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.main-menu ul li ul li a {
+    padding: 0.5rem;
+    width: auto !important;
+}
+
+.main-menu .dropdown .dropdown-menu .nav-item ul li {
+    margin-left: 8%;
+    position: relative;
+    padding-left: 1em;
+}
+
+.main-menu .dropdown-menu .btn-group {
+    width: 100% !important; /* Pastikan btn-group mengambil lebar penuh */
+    display: flex !important;
+    align-items: center; /* Pusatkan vertikal */
+}
+
+.main-menu .dropdown-menu .btn-group .nav-link {
+    color: #343a40 !important;
+    text-wrap: wrap !important;
+    flex: 100;
+}
+
+.main-menu .dropdown-menu .btn-group .dropdown-item {
+    flex: 1 !important;
+    border-left: 1px solid #dee2e6; /* mirip border Bootstrap default */
+    font-weight: 500;
+}
+
+.main-menu .dropdown-menu ul li::before {
+    font-family: "dashicons";
+    content: "\f474";
+    position: absolute;
+    transform: scaleX(-1);
+    font-size: larger;
+    margin: 5px 3%;
+    left: -8%;
+}
+
+.main-menu .nav-link:focus,
+.main-menu .nav-link:hover,
+.main-menu .dropdown-item:focus,
+.main-menu .dropdown-item:hover {
+    background-color: rgba(128, 128, 128, 0.1); /* Abu-abu dengan opacity 0.5 */
+}
+
+
+.main-menu .dropdown-menu li {
+    display: block;
+}
+.main-menu .dropdown-menu .show{
+    display: contents;
+    width: max-content;
+}
+
+.main-menu .dropdown-menu .dropdown-menu {
+    top: -0.8px;
+    left: 100%;
+}
+
+
+@media (max-width: 767px) {
+    .navbar-nav .nav-link {
+        padding-right: 2vw !important;
+        padding-left: 2.1vw !important;
+    }
+}
+
+
+/* Responsive styles */
+@media (max-width: 767px){
+    .main-menu {
+        padding: 2%;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-menu .dropdown-menu {
+        width: max-content !important;
+    }
+}
+
+
+.glass-button {
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(5px);
+  border-radius: 999px;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+
 </style>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
@@ -247,15 +357,19 @@ header.sticky-top {
       <section id="jumbotron-section" class="jumbotron jumbotron-fluid position-relative">
         <div class="jumbotron-overlay"></div>
         <img
-          src="https://images.unsplash.com/photo-1583364486567-ce2e045676e9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="<?php echo get_theme_mod('set_homepage_banner'); ?>"
           class="img-cover"
-          alt="Jumbotron Background"
+          alt="<?php echo get_theme_mod('set_homepage_banner_alt'); ?>"
         >
         <div class="container jumbotron-content">
-          <h1 class="display-4">Fluid jumbotron</h1>
+          <h1 class="display-4"><?php echo get_theme_mod('set_homepage_banner_title'); ?></h1>
           <p class="lead">
-            This is a modified jumbotron that occupies the entire horizontal space of its parent.
+            <?php echo get_theme_mod('set_homepage_banner_description') ?>
           </p>
+          <div class="d-flex mt-4">
+            <a href="<?php echo get_permalink(get_theme_mod('set_banner_buttons')[0]["link_target"]); ?>" class="btn btn-outline-light rounded-pill w-25 p-2 glass-button mx-2"><?php echo get_theme_mod('set_banner_buttons')[0]["link_text"]; ?></a>
+            <a href="<?php echo get_permalink(get_theme_mod('set_banner_buttons')[1]["link_target"]); ?>" class="btn btn-outline-light rounded-pill w-25 p-2 glass-button mx-2"><?php echo get_theme_mod('set_banner_buttons')[1]["link_text"] ?></a>
+          </div>
         </div>
       </section>
 
@@ -270,159 +384,31 @@ header.sticky-top {
         <section class="border-top bg-light">
           <div class="container py-5">
             <div class="row">
-              <?php if (is_active_sidebar('kreasi-sidebar-footer1')) : ?>
-                <?php dynamic_sidebar('kreasi-sidebar-footer1'); ?>
-              <?php endif; ?>
-            </div>
-            <div class="row">
-              <?php if (is_active_sidebar('kreasi-sidebar-footer2')) : ?>
-                <?php dynamic_sidebar('kreasi-sidebar-footer2'); ?>
+              <!-- Kolom besar di atas pada mobile, di kiri pada tablet & desktop -->
+              <div class="col-12 col-md-6">
+                <p class="text-dark"><?php echo get_theme_mod('set_footer_text'); ?></p>
+              </div>
+              <?php if (is_active_sidebar('dominus-vobiscum-footer')) : ?>
+                <?php dynamic_sidebar('dominus-vobiscum-footer'); ?>
               <?php endif; ?>
             </div>
           </div>
         </section>
-        <section class="border-top pt-3 bg-dark">
+        <section class="border-top pt-3 bg-light">
           <div class="container">
             <div class="row">
-              <div class="col-12 text-center">
-                <p class="text-white">
-                  <?php
-                    $copyright_text = get_theme_mod('set_copyright', '© ' . '[date format="Y"] - Copyright Your Company Name - All Rights Reserved');
-                    echo do_shortcode($copyright_text);
-                  ?>
-                </p>
+              <div class="col-5 text-left">
+                <p class="text-dark"><?php echo get_theme_mod('set_copyright'); ?></p>
               </div>
-              <!-- <div class="col-sm-8">
-                <ul class="list-unstyled d-flex justify-content-center justify-content-sm-end flex-wrap">
-                  <li class="ms-3">
-                    <a class="link-dark" href="#">
-                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                        <i class="fas fa-square fa-stack-2x"></i>
-                        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="ms-3">
-                    <a class="link-dark" href="#">
-                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                        <i class="fas fa-square fa-stack-2x"></i>
-                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="ms-3">
-                    <a class="link-dark" href="#">
-                      <span class="fa-stack fa-1x" style="flex-shrink: 0;">
-                        <i class="fas fa-square fa-stack-2x"></i>
-                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div> -->
+              <div class="col-7 text-right">
+                <p class="text-dark"><?php echo get_theme_mod('set_territory'); ?></p>
+              </div>
             </div>
           </div>
         </section>
       </footer>
     </div>
     <?php wp_footer(); ?>
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-        // Konfigurasi navbar
-        const scrollDistance = 50;
-        const header = $('header');
-        const navLinks = $('.navbar-nav .nav-link');
-        const navbarToggler = $('.navbar-toggler');
-        const offcanvas = $('.offcanvas-collapse');
-        const navbar = $('.navbar');
-        const siteTitle = $('.site-title');
-
-        // Fungsi update tampilan navbar
-        function updateNavbarState() {
-            const isScrolled = $(window).scrollTop() > scrollDistance;
-            const isMenuOpen = offcanvas.hasClass('open');
-
-            if(isMenuOpen || isScrolled) {
-                header.removeClass("bg-transparent").addClass("bg-light");
-                siteTitle.removeClass("text-white").addClass("text-dark")
-                navbarToggler.removeClass("border-white").addClass("border-dark")
-                document.documentElement.style.setProperty('--toggler-color', '#343a40');
-                navLinks.removeClass("text-white");
-            } else {
-                header.removeClass("bg-light").addClass("bg-transparent");
-                siteTitle.removeClass("text-dark").addClass("text-white")
-                navbarToggler.removeClass("border-dark").addClass("border-white")
-                document.documentElement.style.setProperty('--toggler-color', '#fff');
-                navLinks.addClass("text-white");
-            }
-            
-            // Handle khusus untuk mobile saat menu terbuka
-            if(isMenuOpen) {
-                header.addClass('bg-light');
-                navLinks.removeClass('text-white');
-            }
-        }
-
-        // Fungsi toggle offcanvas
-        function toggleOffcanvas() {
-            offcanvas.toggleClass('open');
-        }
-
-        // Fungsi positioning offcanvas
-        function positionOffcanvas() {
-            // Hanya berlaku untuk mobile (<768px)
-            if ($(window).width() >= 768) {
-                offcanvas.removeAttr('style');
-                return;
-            }
-
-            if (navbar.length && offcanvas.length) {
-                const navbarBottom = navbar[0].getBoundingClientRect().bottom;
-                offcanvas.css({
-                    top: navbarBottom + 'px',
-                    height: `calc(100vh - ${navbarBottom}px)`
-                });
-            }
-        }
-
-        // Event handlers
-        $(window).on("scroll", updateNavbarState);
-        $('[data-toggle="offcanvas"]').on('click', toggleOffcanvas);
-        $(window).on('resize', positionOffcanvas);
-        
-        navbarToggler.on('click', function() {
-          navbarToggler.toggleClass('active');
-          positionOffcanvas();
-          setTimeout(updateNavbarState, 10);
-        });
-
-        // Inisialisasi awal
-        updateNavbarState();
-        positionOffcanvas();
-
-        $('.main-menu .dropdown-toggle').on('click', function (e) {
-          e.preventDefault();
-
-          $(this).closest('.menu-item-has-children').
-          siblings('.menu-item-has-children').
-          find('.dropdown-menu').removeClass('show');
-          
-          var dropdownMenu = $(this).closest('.menu-item-has-children').find('.dropdown-menu');
-          var mainDropdown = dropdownMenu.first();
-
-          mainDropdown.toggleClass('show', function() {
-              if ($(this).css("display") == 'none') {
-                  dropdownMenu.hide();
-              }
-          });                       
-      });
-      $(document).on('click', function (e) {
-          if (!$(e.target).closest('.main-menu').length) {
-              $('.dropdown-menu').removeClass('show');
-          }
-      });
-    });
-  </script>
 </body>
 
 </html>
