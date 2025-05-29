@@ -354,7 +354,7 @@ header.sticky-top {
         </nav>
       </header>
 
-      <section id="jumbotron-section" class="jumbotron jumbotron-fluid position-relative">
+      <section class="jumbotron jumbotron-fluid position-relative" style="padding: 10rem 2rem">
         <div class="jumbotron-overlay"></div>
         <img
           src="<?php echo get_theme_mod('set_homepage_banner'); ?>"
