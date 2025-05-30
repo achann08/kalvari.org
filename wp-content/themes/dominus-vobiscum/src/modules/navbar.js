@@ -18,6 +18,7 @@ class dc_navbarJS {
         this.navLinks = $('.navbar-nav .nav-link').not('.dropdown-menu .nav-link');
         this.navbar = $('.main-menu');
         this.siteTitle = $('.site-title');
+        this.dropdownMenus = $('.dropdown-menu');
     }
 
     events() {
@@ -70,6 +71,7 @@ class dc_navbarJS {
     updateNavbarState() {
         const isScrolled = $(window).scrollTop() > this.scrollDistance;
         const isMenuOpen = this.$offcanvas.hasClass('open');
+        const dropdownMenus = $('.dropdown-menu');
 
         if (isScrolled || isMenuOpen) {
             this.header.removeClass('bg-transparent').addClass('bg-light');
@@ -78,6 +80,7 @@ class dc_navbarJS {
             this.$toggler.removeClass('border-white').addClass('border-dark');
             document.documentElement.style.setProperty('--toggler-color', '#343a40');
             this.navLinks.removeClass('text-white').addClass('text-dark');
+            this.dropdownMenus.removeClass('glass-dropdown');
         } else {
             this.header.removeClass('bg-light').addClass('bg-transparent');
             this.navbar.removeClass('navbar-light').addClass('navbar-dark');
@@ -85,6 +88,7 @@ class dc_navbarJS {
             this.$toggler.removeClass('border-dark').addClass('border-white');
             document.documentElement.style.setProperty('--toggler-color', '#fff');
             this.navLinks.removeClass('text-dark').addClass('text-white');
+            this.dropdownMenus.addClass('glass-dropdown');
         }
 
         if (isMenuOpen) {

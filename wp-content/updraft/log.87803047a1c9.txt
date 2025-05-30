@@ -1,0 +1,79 @@
+0000.089 () Opened log file at time: Fri, 23 May 2025 11:46:38 +0000 on http://localhost/kalvari.org
+0000.091 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.5 WP: 6.8.1 PHP: 8.2.12 (apache2handler, Windows NT DESKTOP-6U7U00A 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 40.3M | 42M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: N
+0000.093 () Free space on disk containing Updraft's temporary directory: 6083.4 MB
+0000.604 () Restore setup, now closing connection and starting restore over AJAX.
+0000.052 () Opened log file at time: Fri, 23 May 2025 11:46:41 +0000 on http://localhost/kalvari.org
+0000.055 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.5 WP: 6.8.1 PHP: 8.2.12 (apache2handler, Windows NT DESKTOP-6U7U00A 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 37.8M | 40M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: N
+0000.056 () Free space on disk containing Updraft's temporary directory: 6083.1 MB
+0000.146 () Ensuring WP_Filesystem is setup for a restore
+0000.158 () WP_Filesystem is setup and ready for a restore
+0000.174 () Restore job started. Entities to restore: db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["8qt98u_options","8qt98u_users","8qt98u_usermeta","8qt98u_commentmeta","8qt98u_comments","8qt98u_links","8qt98u_postmeta","8qt98u_posts","8qt98u_term_relationships","8qt98u_term_taxonomy","8qt98u_termmeta","8qt98u_terms"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.194 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\kalvari.org\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.200 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.208 () Entity: db
+0000.208 () restore_backup(backup_file=backup_2025-05-01-1655_Gereja_Kalvari_2995551f8e33-db.gz, type=db, info=a:0:{}, last_one=1)
+0000.210 () Unpacking backup... (backup_2025-05-01-1655_Gereja_Kalvari_2995551f8e33-db.gz, 0.2 Mb)
+0000.212 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\kalvari.org\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.223 () Database successfully unpacked
+0000.227 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.272 () Using direct MySQL access; value of use_mysqli is: 1
+0000.276 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0000.495 () Max packet size: 32 MB
+0000.495 () Entering maintenance mode
+0000.495 () Enabling Maintenance mode&#8230;
+0000.601 () Backup of: http://localhost/kalvari.org
+0000.602 () Content URL: http://localhost/kalvari.org/wp-content
+0000.603 () Uploads URL: http://localhost/kalvari.org/wp-content/uploads
+0000.605 () Old table prefix: 8qt98u_
+0000.606 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.608 () Site information: multisite=0
+0000.609 () Site information: sql_mode=NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0000.628 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0000.631 () New table prefix: 1t_
+0000.642 () Processing table (InnoDB): 8qt98u_options - will restore as: 1t_options
+0001.328 () Atomic restore: dropping original table (8qt98u_options)
+0001.373 () Atomic restore: renaming new table (1t_options) to final table name (8qt98u_options)
+0001.414 () Restoring prior UD configuration (table: 8qt98u_options; keys: 4)
+0001.508 () Processing table (InnoDB): 8qt98u_users - will restore as: 1t_users
+0001.723 () Atomic restore: dropping original table (8qt98u_users)
+0001.786 () Atomic restore: renaming new table (1t_users) to final table name (8qt98u_users)
+0001.843 () Processing table (InnoDB): 8qt98u_usermeta - will restore as: 1t_usermeta
+0001.991 () Atomic restore: dropping original table (8qt98u_usermeta)
+0002.041 () Atomic restore: renaming new table (1t_usermeta) to final table name (8qt98u_usermeta)
+0002.078 () Processing table (InnoDB): 8qt98u_commentmeta - will restore as: 1t_commentmeta
+0002.211 () Atomic restore: dropping original table (8qt98u_commentmeta)
+0002.263 () Atomic restore: renaming new table (1t_commentmeta) to final table name (8qt98u_commentmeta)
+0002.298 () Processing table (InnoDB): 8qt98u_comments - will restore as: 1t_comments
+0002.424 () Atomic restore: dropping original table (8qt98u_comments)
+0002.441 () Atomic restore: renaming new table (1t_comments) to final table name (8qt98u_comments)
+0002.460 () Processing table (InnoDB): 8qt98u_links - will restore as: 1t_links
+0002.562 () Atomic restore: dropping original table (8qt98u_links)
+0002.581 () Atomic restore: renaming new table (1t_links) to final table name (8qt98u_links)
+0002.601 () Processing table (InnoDB): 8qt98u_postmeta - will restore as: 1t_postmeta
+0002.753 () Atomic restore: dropping original table (8qt98u_postmeta)
+0002.772 () Atomic restore: renaming new table (1t_postmeta) to final table name (8qt98u_postmeta)
+0002.797 () Processing table (InnoDB): 8qt98u_posts - will restore as: 1t_posts
+0002.897 () Atomic restore: dropping original table (8qt98u_posts)
+0002.909 () Atomic restore: renaming new table (1t_posts) to final table name (8qt98u_posts)
+0002.932 () Processing table (InnoDB): 8qt98u_term_relationships - will restore as: 1t_term_relationships
+0003.864 () Atomic restore: dropping original table (8qt98u_term_relationships)
+0004.453 () Atomic restore: renaming new table (1t_term_relationships) to final table name (8qt98u_term_relationships)
+0004.659 () Processing table (InnoDB): 8qt98u_term_taxonomy - will restore as: 1t_term_taxonomy
+0005.132 () Atomic restore: dropping original table (8qt98u_term_taxonomy)
+0005.312 () Atomic restore: renaming new table (1t_term_taxonomy) to final table name (8qt98u_term_taxonomy)
+0005.350 () Processing table (InnoDB): 8qt98u_termmeta - will restore as: 1t_termmeta
+0005.433 () Atomic restore: dropping original table (8qt98u_termmeta)
+0005.462 () Atomic restore: renaming new table (1t_termmeta) to final table name (8qt98u_termmeta)
+0005.479 () Processing table (InnoDB): 8qt98u_terms - will restore as: 1t_terms
+0005.581 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0005.614 () Unlocking database and leaving maintenance mode
+0005.615 () Disabling Maintenance mode&#8230;
+0005.617 () Atomic restore: dropping original table (8qt98u_terms)
+0005.636 () Atomic restore: renaming new table (1t_terms) to final table name (8qt98u_terms)
+0005.652 () Finished: lines processed: 44 in 5.36 seconds
+0005.656 () Cleaning up rubbish...
+0005.660 () Begin search and replace (updraftplus_restored_db)
+0005.661 () [Database-replace-site-url] Database: search and replace site URL
+0005.661 () This option was not selected.
+0005.831 () Restore successful!
+0005.832 () Restore successful
