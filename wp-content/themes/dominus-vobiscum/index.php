@@ -233,7 +233,6 @@ header.sticky-top {
 }
 
 .main-menu .dropdown-menu .btn-group .nav-link {
-    color: #343a40 !important;
     text-wrap: wrap !important;
     flex: 100;
 }
@@ -343,7 +342,6 @@ header.sticky-top {
     }
 }
 
-
 </style>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
@@ -389,39 +387,33 @@ header.sticky-top {
       <section class="jumbotron jumbotron-fluid position-relative" style="padding: 10rem 2rem">
         <div class="jumbotron-overlay"></div>
         <img
-          src="<?php echo get_theme_mod('set_homepage_banner', 'https://images.unsplash.com/photo-1583364486567-ce2e045676e9'); ?>"
+          src="<?php echo get_theme_mod('set_homepage_banner'); ?>"
           class="img-cover"
-          alt="<?php echo get_theme_mod('set_homepage_banner_alt', 'lorem-ipsum'); ?>"
+          alt="<?php echo get_theme_mod('set_homepage_banner_alt'); ?>"
         >
         <div class="container jumbotron-content">
           <div class="row">
             <div class="col-12 col-lg-8 col-md-12">
-              <h1 class="display-5"><?php echo get_theme_mod('set_homepage_banner_title', 'Lorem ipsum dolor sit amet'); ?></h1>
+              <h1 class="display-5"><?php echo get_theme_mod('set_homepage_banner_title'); ?></h1>
               <?php 
-                $desc = wp_strip_all_tags( get_theme_mod('set_homepage_banner_description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a erat venenatis, semper elit eu, pharetra odio.') );
+                $desc = wp_strip_all_tags( get_theme_mod('set_homepage_banner_description') );
                 if ( $desc ) {
                   echo '<p class="lead">'. esc_html( $desc ) .'</p>';
                 }
-                $banner_buttons = get_theme_mod('set_banner_buttons', []);
               ?>
               <div class="d-md-inline-flex">
-                <?php if (!empty($banner_buttons[0])) : ?>
-                  <div class="col-12 col-md-12 col-sm-12 mb-2 px-0 mr-3">
-                    <a href="<?php echo get_permalink($banner_buttons[0]['link_target']); ?>" 
-                      class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
-                      <?php echo esc_html($banner_buttons[0]['link_text']); ?>
-                    </a>
-                  </div>
-                <?php endif; ?>
-
-                <?php if (!empty($banner_buttons[1])) : ?>
-                  <div class="col-12 col-md-12 col-sm-12 mb-2 px-0">
-                    <a href="<?php echo get_permalink($banner_buttons[1]['link_target']); ?>" 
-                      class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
-                      <?php echo esc_html($banner_buttons[1]['link_text']); ?>
-                    </a>
-                  </div>
-                <?php endif; ?>
+                <div class="col-12 col-md-12 col-sm-12 mb-2 px-0 mr-3">
+                  <a href="<?php echo get_permalink( get_theme_mod('set_banner_buttons')[0]['link_target'] ); ?>"
+                    class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
+                    <?php echo get_theme_mod('set_banner_buttons')[0]['link_text']; ?>
+                  </a>
+                </div>
+                <div class="col-12 col-md-12 col-sm-12 mb-2 px-0">
+                  <a href="<?php echo get_permalink( get_theme_mod('set_banner_buttons')[1]['link_target'] ); ?>"
+                    class="btn btn-outline-light rounded-pill w-100 py-2 glass-button">
+                    <?php echo get_theme_mod('set_banner_buttons')[1]['link_text']; ?>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -441,7 +433,7 @@ header.sticky-top {
             <div class="row">
               <!-- Kolom besar di atas pada mobile, di kiri pada tablet & desktop -->
               <div class="col-12 col-md-6">
-                <p class="text-dark"><?php echo get_theme_mod('set_footer_text', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a erat venenatis, semper elit eu, pharetra odio. Quisque nec feugiat quam. Curabitur faucibus blandit purus, vitae congue lectus imperdiet a.'); ?></p>
+                <p class="text-dark"><?php echo get_theme_mod('set_footer_text'); ?></p>
               </div>
               <?php if (is_active_sidebar('dominus-vobiscum-footer')) : ?>
                 <?php dynamic_sidebar('dominus-vobiscum-footer'); ?>
@@ -453,10 +445,10 @@ header.sticky-top {
           <div class="container">
             <div class="row">
               <div class="col-5 text-left">
-                <p class="text-dark"><?php echo get_theme_mod('set_copyright', '© 20XX - Copyright Lorem Ipsum - All Rights Reserved'); ?></p>
+                <p class="text-dark"><?php echo get_theme_mod('set_copyright'); ?></p>
               </div>
               <div class="col-7 text-right">
-                <p class="text-dark"><?php echo get_theme_mod('set_territory', 'lorem ipsum'); ?></p>
+                <p class="text-dark"><?php echo get_theme_mod('set_territory'); ?></p>
               </div>
             </div>
           </div>

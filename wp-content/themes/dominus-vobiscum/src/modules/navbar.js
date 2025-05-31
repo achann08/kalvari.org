@@ -15,7 +15,7 @@ class dc_navbarJS {
         // Variabel untuk navbar state
         this.scrollDistance = 50;
         this.header = $('header');
-        this.navLinks = $('.navbar-nav .nav-link').not('.dropdown-menu .nav-link');
+        this.navLinks = $('.navbar-nav .nav-link');
         this.navbar = $('.main-menu');
         this.siteTitle = $('.site-title');
         this.dropdownMenus = $('.dropdown-menu');
