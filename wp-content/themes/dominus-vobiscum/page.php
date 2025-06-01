@@ -10,7 +10,7 @@ get_header();
     <div class="col-12">
       <?php while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('py-5'); ?>>
-            <div class="entry-header">
+            <div class="entry-header mb-5">
                 <h1 class="entry-title"><?php the_title(); ?></h1>
             </div>
             <div class="entry-content">
@@ -21,5 +21,4 @@ get_header();
     </div>
   </div>
 </div>
-
 <?php get_footer(); ?>
