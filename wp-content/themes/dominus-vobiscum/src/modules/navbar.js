@@ -71,31 +71,42 @@ class dc_navbarJS {
     updateNavbarState() {
         const isScrolled = $(window).scrollTop() > this.scrollDistance;
         const isMenuOpen = this.$offcanvas.hasClass('open');
-        const dropdownMenus = $('.dropdown-menu');
+        const isFrontPage = $('body').hasClass('home'); // Cek apakah halaman home
 
+        // Jika bukan front page, langsung set state scrolled
+        if (!isFrontPage) {
+            this.setScrolledState();
+            return;
+        }
+
+        // Jika front page, update berdasarkan scroll/menu
         if (isScrolled || isMenuOpen) {
-            this.header.removeClass('bg-transparent').addClass('bg-light');
-            this.navbar.removeClass('navbar-dark').addClass('navbar-light');
-            this.siteTitle.removeClass('text-white').addClass('text-dark');
-            this.$toggler.removeClass('border-white').addClass('border-dark');
-            document.documentElement.style.setProperty('--toggler-color', '#343a40');
-            this.navLinks.removeClass('text-white').addClass('text-dark');
-            this.dropdownMenus.removeClass('glass-dropdown');
+            this.setScrolledState();
         } else {
-            this.header.removeClass('bg-light').addClass('bg-transparent');
-            this.navbar.removeClass('navbar-light').addClass('navbar-dark');
-            this.siteTitle.removeClass('text-dark').addClass('text-white');
-            this.$toggler.removeClass('border-dark').addClass('border-white');
-            document.documentElement.style.setProperty('--toggler-color', '#fff');
-            this.navLinks.removeClass('text-dark').addClass('text-white');
-            this.dropdownMenus.addClass('glass-dropdown');
+            this.setTransparentState();
         }
+    }
 
-        if (isMenuOpen) {
-            this.header.addClass('bg-light');
-            this.navbar.removeClass('navbar-dark').addClass('navbar-light');
-            this.navLinks.removeClass('text-white').addClass('text-dark');
-        }
+    // Method baru untuk state scrolled
+    setScrolledState() {
+        this.header.removeClass('bg-transparent').addClass('bg-light');
+        this.navbar.removeClass('navbar-dark').addClass('navbar-light');
+        this.siteTitle.removeClass('text-white').addClass('text-dark');
+        this.$toggler.removeClass('border-white').addClass('border-dark');
+        document.documentElement.style.setProperty('--toggler-color', '#343a40');
+        this.navLinks.removeClass('text-white').addClass('text-dark');
+        this.dropdownMenus.removeClass('glass-dropdown');
+    }
+
+    // Method baru untuk state transparan
+    setTransparentState() {
+        this.header.removeClass('bg-light').addClass('bg-transparent');
+        this.navbar.removeClass('navbar-light').addClass('navbar-dark');
+        this.siteTitle.removeClass('text-dark').addClass('text-white');
+        this.$toggler.removeClass('border-dark').addClass('border-white');
+        document.documentElement.style.setProperty('--toggler-color', '#fff');
+        this.navLinks.removeClass('text-dark').addClass('text-white');
+        this.dropdownMenus.addClass('glass-dropdown');
     }
 
     handleTogglerClick() {

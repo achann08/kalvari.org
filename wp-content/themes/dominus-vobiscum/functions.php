@@ -93,3 +93,15 @@ add_filter('nav_menu_item_title', function($title, $item, $args, $depth){
 	}
 	return $title;
 }, 10, 4);
+
+// Hapus class admin-bar dari body
+function remove_admin_bar_body_class($classes) {
+    return array_diff($classes, array('admin-bar'));
+}
+add_filter('body_class', 'remove_admin_bar_body_class', 1000);
+
+// Hapus style inline admin bar
+function remove_admin_bar_header() {
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('get_header', 'remove_admin_bar_header');

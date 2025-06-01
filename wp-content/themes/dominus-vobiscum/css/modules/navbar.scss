@@ -1,0 +1,86 @@
+/* navbar.css */
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Navbar Styles */
+.main-menu {
+    padding: 0;
+}
+
+.main-menu ul {
+    padding: 0;
+    margin: 0 0 0 -1.1px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.main-menu ul li ul li a {
+    padding: 0.5rem;
+    width: auto !important;
+}
+
+.main-menu .dropdown .dropdown-menu .nav-item ul li {
+    margin-left: 8%;
+    position: relative;
+    padding-left: 1em;
+}
+
+.main-menu .dropdown-menu .btn-group {
+    width: 100% !important; /* Pastikan btn-group mengambil lebar penuh */
+    display: flex !important;
+    align-items: center; /* Pusatkan vertikal */
+}
+
+.main-menu .dropdown-menu .btn-group .nav-link {
+    text-wrap: wrap !important;
+    flex: 100;
+}
+
+.main-menu .dropdown-menu .btn-group .dropdown-item {
+    flex: 1 !important;
+    font-weight: 500;
+}
+
+.main-menu .dropdown-menu ul li::before {
+    font-family: "dashicons";
+    content: "\f474";
+    position: absolute;
+    transform: scaleX(-1);
+    font-size: larger;
+    margin: 5px 3%;
+    left: -8%;
+}
+
+.main-menu .nav-link:focus,
+.main-menu .nav-link:hover,
+.main-menu .dropdown-item:focus,
+.main-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+
+.main-menu .dropdown-menu li {
+    display: block;
+}
+.main-menu .dropdown-menu .show{
+    display: contents;
+    width: max-content;
+}
+
+.main-menu .dropdown-menu .dropdown-menu {
+    top: -0.8px;
+    left: 100%;
+}
+
+.main-menu .menu-item .nav-link:active{
+    color: #fff !important;
+}
+
+@media screen and (min-width: 768px) {
+    .main-menu .dropdown-menu {
+        width: max-content !important;
+    }
+}

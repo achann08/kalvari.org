@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Template File (Index)
+ * Front Page Template File
  */
 get_header();
 ?>

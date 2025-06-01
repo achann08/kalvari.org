@@ -1,0 +1,29 @@
+/* glass.css */
+.glass-button {
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(5px);
+  border-radius: 999px;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+/* Glass dropdown style */
+.glass-dropdown {
+    background: rgb(255 255 255 / 10%) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+}
+
+.glass-dropdown .dropdown-item {
+    color: white !important;
+}
+
+.glass-dropdown .dropdown-item:hover,
+.glass-dropdown .dropdown-item:focus {
+    color: white !important;
+}

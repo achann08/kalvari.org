@@ -1,0 +1,58 @@
+/* hamburger.css */
+:root {
+  --toggler-color: #fff;
+}
+
+.navbar-toggler{
+  cursor: pointer;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: 0 0 0.15em 0.3em;
+  border-width: 2px !important;
+
+  .navbar-toggler-inner,
+  .navbar-toggler-inner::before,
+  .navbar-toggler-inner::after{
+    width: 1em;
+    height: 0.16em;
+    background-color: var(--toggler-color);
+    transition: all 0.3s ease; 
+    position: absolute;
+  }
+
+  .navbar-toggler-inner::before{
+    content: "";
+    display: block;
+    top: -0.3em;
+  }
+
+  .navbar-toggler-inner::after{
+    content: "";
+    display: block;
+    bottom: -0.3em;
+  }
+
+  .navbar-toggler-inner{
+    transition: 0.2s;
+    transform: rotate(0deg);
+  }
+}
+
+.navbar-toggler.active{
+
+  .navbar-toggler-inner{
+    transition: 0.2s;
+    transform: rotate(405deg);
+  }
+
+  .navbar-toggler-inner::before{
+    top: 0;
+    opacity: 0;
+  }
+
+  .navbar-toggler-inner::after{
+    bottom: 0;
+    transform: rotate(-90deg);
+  }
+
+}
