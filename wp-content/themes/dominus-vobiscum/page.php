@@ -11,6 +11,9 @@ get_header();
       <?php while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('py-5'); ?>>
             <div class="entry-header mb-5">
+              <div class="breadcrumbs py-4">
+                <?php echo custom_breadcrumbs(); ?>
+              </div>
                 <h1 class="entry-title"><?php the_title(); ?></h1>
             </div>
             <div class="entry-content">

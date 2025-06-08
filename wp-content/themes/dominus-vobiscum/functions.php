@@ -109,118 +109,46 @@ function remove_admin_bar_header() {
 }
 add_action('get_header', 'remove_admin_bar_header');
 
-
-// 1) Buat halaman admin baru di bawah Appearance → Theme Settings
-add_action( 'admin_menu', 'dominus_register_theme_settings_page' );
-function dominus_register_theme_settings_page() {
-    // Parameter: 
-    //   - page_title: judul halaman di <title> dan header
-    //   - menu_title: judul menu yang muncul di Appearance
-    //   - capability: siapa yang boleh mengakses (biasanya 'edit_theme_options')
-    //   - menu_slug: slug unik → dihasilkan URL: themes.php?page=dominus-vobiscum
-    //   - function callback: fungsi yang akan menampilkan konten halaman
-    add_theme_page(
-        __('Dominus Vobiscum Settings','dominus-vobiscum'),
-        __('Dominus Widgets','dominus-vobiscum'),
-        'edit_theme_options',
-        'dominus-vobiscum',
-        'dominus_render_theme_settings_page'
-    );
-}
-
-// 2) Daftarkan Setting dan Field di Settings API
-add_action( 'admin_init', 'dominus_register_theme_settings' );
-function dominus_register_theme_settings() {
-    // Kita akan menyimpan semua opsi widget custom di satu option array:
-    //   option name: dominus_widgets_options
-    register_setting(
-        'dominus_widgets_options_group', // group settings, akan digunakan di settings_fields()
-        'dominus_widgets_options',       // nama option di DB (array)
-        'dominus_sanitize_widgets_options' // callback sanitasi
-    );
-
-    // Tambahkan satu section—misal “Custom Widgets”
-    add_settings_section(
-        'dominus_widgets_section',          // ID section
-        __('Custom Widget Settings','dominus-vobiscum'), // Judul section
-        'dominus_widgets_section_callback', // Callback untuk menampilkan deskripsi section
-        'dominus-vobiscum'                  // Slug halaman (sama dengan menu_slug di add_theme_page)
-    );
-
-    // Tambahkan field (checkbox) untuk Hello World Widget
-    add_settings_field(
-        'hello_world_widget_enabled',         // ID field
-        __('Enable Hello World Widget','dominus-vobiscum'), // Label “Enable …”
-        'dominus_render_hello_world_field',   // Callback untuk menampilkan field input
-        'dominus-vobiscum',                   // Slug halaman (samples: 'dominus-vobiscum')
-        'dominus_widgets_section',            // Slug section tempat field muncul
-        array( 'label_for' => 'hello_world_widget_enabled' )
-    );
-
-    // Kalau Anda memiliki widget lain (misalnya My Carousel, My Features, dll),
-    // cukup tambahkan add_settings_field() lain di bawah ini, dengan ID field unik.
-    //
-    // contoh:
-    // add_settings_field(
-    //   'my_carousel_widget_enabled',
-    //   __('Enable My Carousel Widget','dominus-vobiscum'),
-    //   'dominus_render_my_carousel_field',
-    //   'dominus-vobiscum',
-    //   'dominus_widgets_section',
-    //   array( 'label_for' => 'my_carousel_widget_enabled' )
-    // );
-}
-
-// 2.1) Callback sanitasi—cek nilai input apabila ada, simpan boolean saja
-function dominus_sanitize_widgets_options( $input ) {
-    $sanitized = array();
-
-    // Periksa apakah checkbox hello_world_widget_enabled ada (value '1')
-    $sanitized['hello_world_widget_enabled'] = isset( $input['hello_world_widget_enabled'] ) && $input['hello_world_widget_enabled'] ? '1' : '';
-
-    // Jika ada widget lain, ambil juga di sini:
-    // $sanitized['my_carousel_widget_enabled'] = isset( $input['my_carousel_widget_enabled'] ) && $input['my_carousel_widget_enabled'] ? '1' : '';
-
-    return $sanitized;
-}
-
-// 2.2) Deskripsi di atas tiap field section (opsional)
-function dominus_widgets_section_callback() {
-    echo '<p>' . esc_html__( 'Di sini Anda bisa menentukan widget‐widget custom mana yang akan muncul di Page Builder SiteOrigin. Centang agar widget tampil; hilangkan centang untuk menyembunyikan widget.', 'dominus-vobiscum' ) . '</p>';
-}
-
-// 2.3) Render input checkbox untuk Hello World Widget
-function dominus_render_hello_world_field() {
-    // Ambil opsi yang sudah disimpan
-    $opts = get_option( 'dominus_widgets_options', array() );
-    ?>
-    <label for="hello_world_widget_enabled">
-        <!-- Checkbox bernilai “1” jika aktif -->
-        <input
-            type="checkbox"
-            id="hello_world_widget_enabled"
-            name="dominus_widgets_options[hello_world_widget_enabled]"
-            value="1"
-            <?php checked( isset( $opts['hello_world_widget_enabled'] ) && $opts['hello_world_widget_enabled'], '1' ); ?>
-        />
-        <?php esc_html_e( 'Yes, tampilkan Hello World Widget di Page Builder', 'dominus-vobiscum' ); ?>
-    </label>
-    <?php
-}
-
-// 3) Render lengkap halaman ‘Dominus Widgets’ di Appearance → Tema
-function dominus_render_theme_settings_page() {
-    ?>
-    <div class="wrap">
-        <h1><?php esc_html_e( 'Dominus Vobiscum Widgets Settings', 'dominus-vobiscum' ); ?></h1>
-        <form method="post" action="options.php">
-            <?php
-            // Tampilkan seluruh fields & sections yang sudah kita register
-            settings_fields( 'dominus_widgets_options_group' );
-            do_settings_sections( 'dominus-vobiscum' );
-            submit_button();
-            ?>
-        </form>
-    </div>
-    <?php
+function custom_breadcrumbs() {
+    $separator = ' » ';
+    $home = 'Home';
+    
+    echo '<div class="breadcrumbs">';
+    
+    // Halaman Home
+    echo '<a href="' . home_url() . '">' . $home . '</a>' . $separator;
+    
+    if (is_single() || is_page()) {
+        global $post;
+        $parents = array();
+        
+        // Dapatkan semua parent pages
+        if ($post->post_parent) {
+            $current_id = $post->post_parent;
+            while ($current_id) {
+                $parent_page = get_post($current_id);
+                $parents[] = '<a href="' . get_permalink($parent_page->ID) . '">' . get_the_title($parent_page->ID) . '</a>';
+                $current_id = $parent_page->post_parent;
+            }
+            $parents = array_reverse($parents);
+            echo implode($separator, $parents) . $separator;
+        }
+        
+        // Halaman saat ini
+        the_title();
+    } elseif (is_category()) {
+        // Kategori
+        single_cat_title();
+    } elseif (is_archive()) {
+        // Arsip
+        echo get_the_archive_title();
+    } elseif (is_search()) {
+        // Pencarian
+        echo 'Hasil pencarian: "' . get_search_query() . '"';
+    } elseif (is_404()) {
+        // 404
+        echo 'Halaman Tidak Ditemukan';
+    }
+    
+    echo '</div>';
 }
