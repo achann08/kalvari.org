@@ -1,6 +1,6 @@
 /* mobile.css */
 /* Ubah breakpoint menjadi mobile-only (di bawah 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 821px) {
   .offcanvas-collapse {
     position: fixed;
     top: 0;
@@ -31,34 +31,49 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
+    padding: revert;
   }
-}
 
-@media (max-width: 767px) {
-    .navbar-nav .nav-link {
-        padding-right: 2vw !important;
-        padding-left: 2.1vw !important;
-    }
-}
+  .navbar-nav .nav-link {
+    padding-right: 2vw !important;
+    padding-left: 2vw !important;
+  }
 
-/* Responsive styles */
-@media (max-width: 767px){
-    .main-menu {
-        padding: 2%;
-        margin-top: 2%;
-    }
-}
+  .dropdown-menu.show{
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
-/* Override untuk mobile */
-@media (max-width: 767.98px) {
-    .glass-dropdown {
-        background: #fff !important;
-        backdrop-filter: none !important;
-        border: none !important;
-        color: #212529 !important;
-    }
-    
-    .glass-dropdown .dropdown-item {
-        color: #212529 !important;
-    }
+  .main-menu .dropdown-menu li{
+    justify-items: flex-start;
+    width: 100%;
+  }
+
+  .main-menu {
+    padding: 2%;
+    margin-top: 2%;
+  }
+
+  .glass-dropdown {
+    background: #fff !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    color: #212529 !important;
+  }
+  
+  .glass-dropdown .dropdown-item {
+      color: #212529 !important;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: #212529 !important;
+  }
+
+  .main-menu .dropdown-menu .btn-group .dropdown-item {
+      padding-left: 2vw;
+      padding-right: 2vw;
+  }
+
+
+
 }

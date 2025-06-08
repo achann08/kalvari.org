@@ -19,6 +19,7 @@ class dc_navbarJS {
         this.navbar = $('.main-menu');
         this.siteTitle = $('.site-title');
         this.dropdownMenus = $('.dropdown-menu');
+        this.dropdownLinks = $('.dropdown-menu .btn-group .nav-link');
     }
 
     events() {
@@ -39,6 +40,9 @@ class dc_navbarJS {
             
             // Inisialisasi awal
             this.positionOffcanvas();
+
+            // Panggil penyesuaian awal
+            this.adjustDropdownPositions();
         });
     }
 
@@ -49,7 +53,7 @@ class dc_navbarJS {
 
     positionOffcanvas() {
         // Hanya di mobile (<768px)
-        if ($(window).width() >= 768) {
+        if ($(window).width() >= 821) {
             this.$offcanvas.removeAttr('style');
             return;
         }
@@ -89,24 +93,22 @@ class dc_navbarJS {
 
     // Method baru untuk state scrolled
     setScrolledState() {
-        this.header.removeClass('bg-transparent').addClass('bg-light');
-        this.navbar.removeClass('navbar-dark').addClass('navbar-light');
-        this.siteTitle.removeClass('text-white').addClass('text-dark');
-        this.$toggler.removeClass('border-white').addClass('border-dark');
-        document.documentElement.style.setProperty('--toggler-color', '#343a40');
-        this.navLinks.removeClass('text-white').addClass('text-dark');
+        this.header.removeClass('bg-transparent').addClass('bg-dark');
+        this.siteTitle.removeClass('text-dark').addClass('text-white');
+        this.$toggler.removeClass('border-dark').addClass('border-light');
+        document.documentElement.style.setProperty('--toggler-color', '#f8f9fa');
         this.dropdownMenus.removeClass('glass-dropdown');
+        this.dropdownLinks.css('color', '#212529');
     }
 
     // Method baru untuk state transparan
     setTransparentState() {
-        this.header.removeClass('bg-light').addClass('bg-transparent');
-        this.navbar.removeClass('navbar-light').addClass('navbar-dark');
+        this.header.removeClass('bg-dark').addClass('bg-transparent');
         this.siteTitle.removeClass('text-dark').addClass('text-white');
-        this.$toggler.removeClass('border-dark').addClass('border-white');
-        document.documentElement.style.setProperty('--toggler-color', '#fff');
-        this.navLinks.removeClass('text-dark').addClass('text-white');
+        this.$toggler.removeClass('border-dark').addClass('border-light');
+        document.documentElement.style.setProperty('--toggler-color', '#f8f9fa');
         this.dropdownMenus.addClass('glass-dropdown');
+        this.dropdownLinks.css('color', 'white');
     }
 
     handleTogglerClick() {
@@ -137,6 +139,32 @@ class dc_navbarJS {
         if (!$(e.target).closest('.main-menu').length) {
             $('.dropdown-menu').removeClass('show');
         }
+    }
+
+    adjustDropdownPositions() {
+        // Hanya di desktop
+        if ($(window).width() < 821) return;
+
+        $('.dropdown-menu').each((index, element) => {
+            const $dropdown = $(element);
+            const $parent = $dropdown.parent();
+            
+            // Reset class position
+            $dropdown.removeClass('ml-auto');
+            
+            // Hitung posisi dropdown jika ditampilkan
+            const parentRect = $parent[0].getBoundingClientRect();
+            const dropdownWidth = $dropdown.outerWidth();
+            const viewportWidth = $(window).width();
+            
+            // Hitung posisi kanan dropdown jika tidak ada ml-auto
+            const rightPosition = parentRect.left + dropdownWidth;
+            
+            // Jika dropdown akan keluar dari viewport
+            if (rightPosition > viewportWidth) {
+                $dropdown.addClass('ml-auto');
+            }
+        });
     }
 }
 

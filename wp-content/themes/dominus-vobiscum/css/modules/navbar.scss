@@ -11,7 +11,6 @@
 
 .main-menu ul {
     padding: 0;
-    margin: 0 0 0 -1.1px;
     font-size: 18px;
     font-weight: 500;
     border-radius: 0;
@@ -29,19 +28,12 @@
 }
 
 .main-menu .dropdown-menu .btn-group {
-    width: 100% !important; /* Pastikan btn-group mengambil lebar penuh */
     display: flex !important;
-    align-items: center; /* Pusatkan vertikal */
-}
-
-.main-menu .dropdown-menu .btn-group .nav-link {
-    text-wrap: wrap !important;
-    flex: 100;
 }
 
 .main-menu .dropdown-menu .btn-group .dropdown-item {
-    flex: 1 !important;
     font-weight: 500;
+    text-wrap: auto;
 }
 
 .main-menu .dropdown-menu ul li::before {
@@ -58,9 +50,13 @@
 .main-menu .nav-link:hover,
 .main-menu .dropdown-item:focus,
 .main-menu .dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(210, 210, 210, 0.2) !important
 }
 
+.main-menu .dropdown-item {
+    display: block;
+    box-sizing: border-box;
+}
 
 .main-menu .dropdown-menu li {
     display: block;
@@ -79,8 +75,37 @@
     color: #fff !important;
 }
 
-@media screen and (min-width: 768px) {
-    .main-menu .dropdown-menu {
-        width: max-content !important;
+@media screen and (min-width: 821px) {
+    
+    .main-menu .navbar-nav > li {
+        margin-right: 10px;
     }
+
+    .main-menu .dropdown-menu {
+        min-width: max-content;
+        right: 0 !important;
+        max-height: 300px;     
+        overflow-y: auto;
+    }
+    .main-menu .dropdown-menu .btn-group .nav-link {
+        flex: 100;
+        text-wrap: wrap !important;
+    }
+
+    .main-menu .dropdown-menu .btn-group .dropdown-item {
+        flex: 1 !important;
+    }
+    
+    .main-menu .dropdown-menu .btn-group{
+        width: 100% !important; /* Pastikan btn-group mengambil lebar penuh */
+    }
+    
+    .main-menu .navbar-nav > li > .btn-group:first-child .nav-link {
+        color: white;
+    }
+
+}
+
+.no-wrap .nav-item {
+    white-space: nowrap;
 }

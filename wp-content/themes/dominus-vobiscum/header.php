@@ -3,10 +3,10 @@
  * Header Template
  */
 $is_front_page = is_front_page();
-$header_class = $is_front_page ? 'bg-transparent' : 'bg-light';
-$navbar_class = $is_front_page ? 'navbar-dark' : 'navbar-light';
-$title_class = $is_front_page ? 'text-white' : 'text-dark';
-$toggler_class = $is_front_page ? 'border-white' : 'border-dark';
+$header_class = $is_front_page ? 'bg-transparent' : 'bg-dark';
+$navbar_class = $is_front_page ? 'navbar-light' : 'navbar-dark';
+$title_class = $is_front_page ? 'text-white' : 'text-white';
+$toggler_class = $is_front_page ? 'border-light' : 'border-light';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@ $toggler_class = $is_front_page ? 'border-white' : 'border-dark';
   <?php wp_body_open(); ?>
   <div class="site" id="page">
     <header class="fixed-top <?php echo $header_class; ?>">
-      <nav class="main-menu navbar navbar-expand-md <?php echo $navbar_class; ?> py-3">
+      <nav class="main-menu navbar navbar-expand-lg <?php echo $navbar_class; ?> navbar-dark py-3">
         <div class="container">
           <?php
             $custom_logo_id = get_theme_mod('custom_logo');
@@ -35,11 +35,11 @@ $toggler_class = $is_front_page ? 'border-white' : 'border-dark';
               <?php echo $logo_img; ?>
             <?php endif; ?>
             <div class="site-branding-text ml-2">
-              <span class="site-title h4 mb-0 <?php echo $title_class; ?>"><?php bloginfo('name'); ?></span>
+              <span class="site-title mb-0 <?php echo $title_class; ?>"><?php bloginfo('name'); ?></span>
               <small class="site-description d-block"><?php bloginfo('description'); ?></small>
             </div>
           </a>
-          <button class="navbar-toggler border <?php echo $toggler_class; ?> d-md-none" type="button"
+          <button class="navbar-toggler border <?php echo $toggler_class; ?> d-lg-none" type="button"
               data-toggle="offcanvas" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@ $toggler_class = $is_front_page ? 'border-white' : 'border-dark';
                 wp_nav_menu(array(
                     'theme_location'    => 'dominus_vobiscum_nav_menu',
                     'container'         => '',
-                    'menu_class'        => 'navbar-nav mx-auto mb-2 mb-lg-0',
+                    'menu_class'        => 'navbar-nav ml-auto no-wrap mb-2 mb-lg-0',
                     'depth'             => 4,
                     'walker'            => new WP_Bootstrap_Navwalker(),
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback'

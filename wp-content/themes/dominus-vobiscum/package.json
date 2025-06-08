@@ -11,6 +11,8 @@
   "author": "Hendra Sutrisno",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/scripts": "^30.15.0"
+    "@wordpress/scripts": "^30.15.0",
+    "rfs": "^10.0.0",
+    "sass": "^1.32.13"
   }
 }
