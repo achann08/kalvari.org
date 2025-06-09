@@ -110,45 +110,78 @@ function remove_admin_bar_header() {
 add_action('get_header', 'remove_admin_bar_header');
 
 function custom_breadcrumbs() {
-    $separator = ' » ';
-    $home = 'Home';
+    $separator  = ' » ';
+    $home_label = 'Home';
     
     echo '<div class="breadcrumbs">';
     
-    // Halaman Home
-    echo '<a href="' . home_url() . '">' . $home . '</a>' . $separator;
+    // Link Home
+    echo '<a href="' . home_url() . '">' . $home_label . '</a>';
     
-    if (is_single() || is_page()) {
-        global $post;
-        $parents = array();
+    // Jika bukan front page / blog home
+    if ( ! is_front_page() && ! is_home() ) {
+        echo $separator;
         
-        // Dapatkan semua parent pages
-        if ($post->post_parent) {
-            $current_id = $post->post_parent;
-            while ($current_id) {
-                $parent_page = get_post($current_id);
-                $parents[] = '<a href="' . get_permalink($parent_page->ID) . '">' . get_the_title($parent_page->ID) . '</a>';
-                $current_id = $parent_page->post_parent;
+        if ( is_single() ) {
+            // Single post
+            the_title();
+            
+        } elseif ( is_page() ) {
+            global $post;
+            
+            // Tangani hirarki page
+            $ancestors = get_post_ancestors( $post->ID );
+            if ( ! empty( $ancestors ) ) {
+                $ancestors = array_reverse( $ancestors );
+                foreach ( $ancestors as $ancestor_id ) {
+                    echo '<a href="' . get_permalink( $ancestor_id ) . '">'
+                         . get_the_title( $ancestor_id ) .
+                         '</a>' . $separator;
+                }
             }
-            $parents = array_reverse($parents);
-            echo implode($separator, $parents) . $separator;
+            
+            // Judul halaman saat ini
+            echo get_the_title( $post->ID );
+            
+        } elseif ( is_category() ) {
+            // Kategori
+            single_cat_title();
+            
+        } elseif ( is_archive() ) {
+            // Archive generic (tag, author, date, custom post type)
+            echo get_the_archive_title();
+            
+        } elseif ( is_search() ) {
+            // Hasil pencarian
+            echo 'Hasil pencarian: "' . get_search_query() . '"';
+            
+        } elseif ( is_404() ) {
+            // 404
+            echo 'Halaman Tidak Ditemukan';
         }
         
-        // Halaman saat ini
-        the_title();
-    } elseif (is_category()) {
-        // Kategori
-        single_cat_title();
-    } elseif (is_archive()) {
-        // Arsip
-        echo get_the_archive_title();
-    } elseif (is_search()) {
-        // Pencarian
-        echo 'Hasil pencarian: "' . get_search_query() . '"';
-    } elseif (is_404()) {
-        // 404
-        echo 'Halaman Tidak Ditemukan';
+    } else {
+        // PERBAIKAN DI SINI: Handle khusus untuk homepage
+        $postTitle = get_queried_object()->post_title;
+        
+        // Jika frontpage adalah halaman statis, gunakan judulnya
+        if ( $postTitle ) {
+            echo $separator . esc_html( $postTitle );
+        } 
+        // Jika tidak (blog traditional), gunakan nama situs
+        else {
+            echo $separator . get_bloginfo( 'name' );
+        }
     }
     
     echo '</div>';
 }
+
+
+//functions ini untuk bug yang pagination ajaxnya berhenti di halaman 6
+function dominus_vobiscum_posts_per_page( $query ) {
+    if ( !is_admin() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 1 );
+    }
+}
+add_action( 'pre_get_posts', 'dominus_vobiscum_posts_per_page', 1 );

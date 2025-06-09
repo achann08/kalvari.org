@@ -1,0 +1,183 @@
+0000.018 () Opened log file at time: Mon, 09 Jun 2025 03:40:51 +0000 on http://localhost/kalvari.org
+0000.019 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.6 WP: 6.8.1 PHP: 8.0.30 (apache2handler, Windows NT LAPTOP-FMKECCH0 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.0.30 safe_mode: 0 max_execution_time: 900 memory_limit: 5120M (used: 7.9M | 10M) multisite: N openssl: OpenSSL 1.1.1t  7 Feb 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.020 () Free space on disk containing Updraft's temporary directory: 183438 MB
+0000.025 () Restore setup, now closing connection and starting restore over AJAX.
+0000.015 () Opened log file at time: Mon, 09 Jun 2025 03:40:52 +0000 on http://localhost/kalvari.org
+0000.015 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.6 WP: 6.8.1 PHP: 8.0.30 (apache2handler, Windows NT LAPTOP-FMKECCH0 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.0.30 safe_mode: 0 max_execution_time: 900 memory_limit: 5120M (used: 6.6M | 8M) multisite: N openssl: OpenSSL 1.1.1t  7 Feb 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.015 () Free space on disk containing Updraft's temporary directory: 183438 MB
+0000.015 () Ensuring WP_Filesystem is setup for a restore
+0000.017 () WP_Filesystem is setup and ready for a restore
+0000.022 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["8qt98u_options","8qt98u_users","8qt98u_usermeta","8qt98u_commentmeta","8qt98u_comments","8qt98u_links","8qt98u_postmeta","8qt98u_posts","8qt98u_snippets","8qt98u_term_relationships","8qt98u_term_taxonomy","8qt98u_termmeta","8qt98u_terms","8qt98u_e_events"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.026 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\kalvari.org\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.035 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.037 () Entity: db
+0000.037 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-db.gz, type=db, info=a:0:{}, last_one=)
+0000.037 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-db.gz, 0.3 Mb)
+0000.038 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\kalvari.org\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.040 () Database successfully unpacked
+0000.041 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.048 () Using direct MySQL access; value of use_mysqli is: 1
+0000.049 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0000.104 () Max packet size: 32 MB
+0000.104 () Entering maintenance mode
+0000.104 () Enabling Maintenance mode&#8230;
+0000.141 () Backup of: http://localhost/kalvari.org
+0000.141 () Content URL: http://localhost/kalvari.org/wp-content
+0000.141 () Uploads URL: http://localhost/kalvari.org/wp-content/uploads
+0000.141 () Old table prefix: 8qt98u_
+0000.141 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.141 () Site information: multisite=0
+0000.141 () Site information: sql_mode=NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0000.142 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0000.142 () New table prefix: l4_
+0000.144 () Processing table (InnoDB): 8qt98u_options - will restore as: l4_options
+0000.215 () Atomic restore: dropping original table (8qt98u_options)
+0000.219 () Atomic restore: renaming new table (l4_options) to final table name (8qt98u_options)
+0000.226 () Restoring prior UD configuration (table: 8qt98u_options; keys: 4)
+0000.240 () Processing table (InnoDB): 8qt98u_users - will restore as: l4_users
+0000.275 () Atomic restore: dropping original table (8qt98u_users)
+0000.280 () Atomic restore: renaming new table (l4_users) to final table name (8qt98u_users)
+0000.286 () Processing table (InnoDB): 8qt98u_usermeta - will restore as: l4_usermeta
+0000.312 () Atomic restore: dropping original table (8qt98u_usermeta)
+0000.316 () Atomic restore: renaming new table (l4_usermeta) to final table name (8qt98u_usermeta)
+0000.325 () Processing table (InnoDB): 8qt98u_commentmeta - will restore as: l4_commentmeta
+0000.346 () Atomic restore: dropping original table (8qt98u_commentmeta)
+0000.349 () Atomic restore: renaming new table (l4_commentmeta) to final table name (8qt98u_commentmeta)
+0000.356 () Processing table (InnoDB): 8qt98u_comments - will restore as: l4_comments
+0000.385 () Atomic restore: dropping original table (8qt98u_comments)
+0000.392 () Atomic restore: renaming new table (l4_comments) to final table name (8qt98u_comments)
+0000.397 () Processing table (InnoDB): 8qt98u_links - will restore as: l4_links
+0000.416 () Atomic restore: dropping original table (8qt98u_links)
+0000.422 () Atomic restore: renaming new table (l4_links) to final table name (8qt98u_links)
+0000.428 () Processing table (InnoDB): 8qt98u_postmeta - will restore as: l4_postmeta
+0000.464 () Atomic restore: dropping original table (8qt98u_postmeta)
+0000.468 () Atomic restore: renaming new table (l4_postmeta) to final table name (8qt98u_postmeta)
+0000.475 () Processing table (InnoDB): 8qt98u_posts - will restore as: l4_posts
+0000.533 () Atomic restore: dropping original table (8qt98u_posts)
+0000.537 () Atomic restore: renaming new table (l4_posts) to final table name (8qt98u_posts)
+0000.543 () Processing table (InnoDB): 8qt98u_snippets - will restore as: l4_snippets
+0000.568 () Atomic restore: dropping original table (8qt98u_snippets)
+0000.573 () Atomic restore: renaming new table (l4_snippets) to final table name (8qt98u_snippets)
+0000.578 () Processing table (InnoDB): 8qt98u_term_relationships - will restore as: l4_term_relationships
+0000.600 () Atomic restore: dropping original table (8qt98u_term_relationships)
+0000.603 () Atomic restore: renaming new table (l4_term_relationships) to final table name (8qt98u_term_relationships)
+0000.609 () Processing table (InnoDB): 8qt98u_term_taxonomy - will restore as: l4_term_taxonomy
+0000.630 () Atomic restore: dropping original table (8qt98u_term_taxonomy)
+0000.633 () Atomic restore: renaming new table (l4_term_taxonomy) to final table name (8qt98u_term_taxonomy)
+0000.637 () Processing table (InnoDB): 8qt98u_termmeta - will restore as: l4_termmeta
+0000.658 () Atomic restore: dropping original table (8qt98u_termmeta)
+0000.663 () Atomic restore: renaming new table (l4_termmeta) to final table name (8qt98u_termmeta)
+0000.667 () Processing table (InnoDB): 8qt98u_terms - will restore as: l4_terms
+0000.695 () Atomic restore: dropping original table (8qt98u_terms)
+0000.699 () Atomic restore: renaming new table (l4_terms) to final table name (8qt98u_terms)
+0000.703 () Processing table (InnoDB): 8qt98u_e_events - will restore as: l4_e_events
+0000.725 () Database queries processed: 50 in 0.68 seconds
+0000.725 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0000.735 () Unlocking database and leaving maintenance mode
+0000.735 () Disabling Maintenance mode&#8230;
+0000.735 () Atomic restore: dropping original table (8qt98u_e_events)
+0000.736 () Atomic restore: renaming new table (l4_e_events) to final table name (8qt98u_e_events)
+0000.741 () Finished: lines processed: 51 in 0.69 seconds
+0000.742 () Cleaning up rubbish...
+0000.742 () Begin search and replace (updraftplus_restored_db)
+0000.742 () [Database-replace-site-url] Database: search and replace site URL
+0000.742 () This option was not selected.
+0000.748 () Entity: plugins
+0000.748 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:46:"C:\xampp\htdocs\kalvari.org/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0000.749 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip, 21.1 MB)
+0000.770 () Unzipping backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip to C:/xampp/htdocs/kalvari.org/wp-content/upgrade/bb8f92d5/ using UpdraftPlus_ZipArchive, starting index 0
+0001.440 () Unzip progress: 1002 out of 4554 files (925.9 KB, plugins/code-snippets/js/settings.ts)
+0002.631 () Unzip progress: 2003 out of 4554 files (6 MB, plugins/siteorigin-panels/js/lib/i18n/fr.min.js)
+0010.042 () Unzip progress: 3004 out of 4554 files (20.3 MB, plugins/so-widgets-bundle/widgets/simple-masonry/assets/banner.svg)
+0018.629 () Unzip progress: 4005 out of 4554 files (48.6 MB, plugins/updraftplus/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc)
+0024.063 () Unzip progress: 4554 out of 4554 files (53.5 MB, plugins/wp-fastest-cache/wpFastestCache.php)
+0024.066 () Moving old data: filesystem method / updraft_dir is potentially possible
+0024.067 () Moving old data: can potentially use wp_filesystem method / -old
+0024.067 () Moving old data out of the way...
+0025.019 () Top-level entities being moved: classic-editor, classic-widgets, code-snippets, index.php, kirki, show-current-template, siteorigin-panels, so-css, so-widgets-bundle, so-widgets-bundle.zip, tinymce-advanced, updraftplus, wp-crontrol, wp-dummy-content-generator, wp-fastest-cache
+0025.135 () Moving unpacked backup into place...
+0025.950 () Top-level entities being moved: classic-editor, classic-widgets, code-snippets, index.php, kirki, show-current-template, siteorigin-panels, so-css, so-widgets-bundle, so-widgets-bundle.zip, tinymce-advanced, updraftplus, wp-crontrol, wp-fastest-cache
+0025.975 () Cleaning up rubbish...
+0026.025 () Entity: themes
+0026.025 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-themes.zip, type=themes, info=a:3:{s:4:"path";s:45:"C:\xampp\htdocs\kalvari.org/wp-content/themes";s:11:"description";s:6:"Themes";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0026.027 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-themes.zip, 91.4 MB)
+0026.027 () Unzipping backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-themes.zip to C:/xampp/htdocs/kalvari.org/wp-content/upgrade/abf6d2cc/ using UpdraftPlus_ZipArchive, starting index 0
+0032.175 () Unzip progress: 5490 out of 55961 files (92 B, themes/dominus-vobiscum/build/index.asset.php)
+0036.217 () Unzip progress: 6491 out of 55961 files (7.1 MB, themes/dominus-vobiscum/node_modules/@babel/plugin-syntax-dynamic-import/lib/index.js)
+0043.302 () Unzip progress: 7492 out of 55961 files (12.3 MB, themes/dominus-vobiscum/node_modules/@bcoe/v8-coverage/dist/lib/compare.js)
+0050.687 () Unzip progress: 8493 out of 55961 files (17.7 MB, themes/dominus-vobiscum/node_modules/@jest/source-map/build/index.js)
+0058.413 () Unzip progress: 9494 out of 55961 files (38.7 MB, themes/dominus-vobiscum/node_modules/@puppeteer/browsers/lib/esm/CLI.js)
+0065.646 () Unzip progress: 10495 out of 55961 files (43.2 MB, themes/dominus-vobiscum/node_modules/@sentry/types/types/measurement.d.ts)
+0072.151 () Unzip progress: 11496 out of 55961 files (46.8 MB, themes/dominus-vobiscum/node_modules/@stylistic/stylelint-plugin/lib/rules/value-list-max-empty-lines/index.js)
+0078.622 () Unzip progress: 12497 out of 55961 files (55.7 MB, themes/dominus-vobiscum/node_modules/@typescript-eslint/eslint-plugin/docs/rules/explicit-module-boundary-types.md)
+0086.696 () Unzip progress: 13498 out of 55961 files (57.5 MB, themes/dominus-vobiscum/node_modules/@typescript-eslint/typescript-estree/dist/parseSettings/warnAboutTSVersion.js.map)
+0094.345 () Unzip progress: 14499 out of 55961 files (60.3 MB, themes/dominus-vobiscum/node_modules/@wordpress/e2e-test-utils-playwright/build-types/editor/switch-editor-tool.d.ts.map)
+0100.767 () Unzip progress: 15500 out of 55961 files (76.7 MB, themes/dominus-vobiscum/node_modules/ajv/dist/vocabularies/format/index.js)
+0108.081 () Unzip progress: 16501 out of 55961 files (80.6 MB, themes/dominus-vobiscum/node_modules/axe-core/locales/da.json)
+0114.524 () Unzip progress: 17502 out of 55961 files (87.7 MB, themes/dominus-vobiscum/node_modules/caniuse-lite/data/features/iframe-seamless.js)
+0122.069 () Unzip progress: 18503 out of 55961 files (93.5 MB, themes/dominus-vobiscum/node_modules/chromium-bidi/lib/esm/bidiMapper/modules/script/PreloadScript.js.map)
+0128.452 () Unzip progress: 19504 out of 55961 files (101.9 MB, themes/dominus-vobiscum/node_modules/core-js/actual/symbol/has-instance.js)
+0135.360 () Unzip progress: 20505 out of 55961 files (102 MB, themes/dominus-vobiscum/node_modules/core-js/features/string/virtual/replace-all.js)
+0142.437 () Unzip progress: 21506 out of 55961 files (102.4 MB, themes/dominus-vobiscum/node_modules/core-js/internals/shared-store.js)
+0151.275 () Unzip progress: 22507 out of 55961 files (103 MB, themes/dominus-vobiscum/node_modules/core-js/stable/string/from-code-point.js)
+0158.131 () Unzip progress: 23508 out of 55961 files (103.9 MB, themes/dominus-vobiscum/node_modules/core-js-pure/es/string/virtual/code-point-at.js)
+0164.402 () Unzip progress: 24509 out of 55961 files (104 MB, themes/dominus-vobiscum/node_modules/core-js-pure/full/math/f16round.js)
+0169.338 () Unzip progress: 25510 out of 55961 files (104.6 MB, themes/dominus-vobiscum/node_modules/core-js-pure/modules/esnext.iterator.filter.js)
+0174.349 () Unzip progress: 26511 out of 55961 files (105.6 MB, themes/dominus-vobiscum/node_modules/css-loader/node_modules/semver/functions/prerelease.js)
+0180.003 () Unzip progress: 27512 out of 55961 files (109.7 MB, themes/dominus-vobiscum/node_modules/data-view-byte-length/tsconfig.json)
+0186.495 () Unzip progress: 28513 out of 55961 files (115.6 MB, themes/dominus-vobiscum/node_modules/es-abstract/2017/SymbolDescriptiveString.js)
+0192.176 () Unzip progress: 29514 out of 55961 files (116.4 MB, themes/dominus-vobiscum/node_modules/es-abstract/2022/OrdinaryDefineOwnProperty.js)
+0194.342 () Unzip progress: 30515 out of 55961 files (117.9 MB, themes/dominus-vobiscum/node_modules/es-to-primitive/es6.js)
+0198.057 () Unzip progress: 31516 out of 55961 files (125 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-jest/lib/rules/valid-expect.js)
+0204.790 () Unzip progress: 32517 out of 55961 files (126.8 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-jest/node_modules/@typescript-eslint/visitor-keys/dist/index.js)
+0210.429 () Unzip progress: 33518 out of 55961 files (130.3 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-react/node_modules/resolve/test/mock_sync.js)
+0215.913 () Unzip progress: 34519 out of 55961 files (135.4 MB, themes/dominus-vobiscum/node_modules/has-proto/test/index.js)
+0221.854 () Unzip progress: 35520 out of 55961 files (139 MB, themes/dominus-vobiscum/node_modules/istanbul-lib-source-maps/lib/pathutils.js)
+0227.782 () Unzip progress: 36521 out of 55961 files (144.9 MB, themes/dominus-vobiscum/node_modules/jsdom/lib/jsdom/living/nodes/DOMImplementation-impl.js)
+0233.781 () Unzip progress: 37522 out of 55961 files (149.6 MB, themes/dominus-vobiscum/node_modules/lighthouse/core/computed/unused-javascript-summary.d.ts)
+0240.602 () Unzip progress: 38523 out of 55961 files (155.8 MB, themes/dominus-vobiscum/node_modules/lighthouse/node_modules/puppeteer-core/lib/esm/puppeteer/api/Environment.d.ts)
+0246.795 () Unzip progress: 39524 out of 55961 files (177 MB, themes/dominus-vobiscum/node_modules/lighthouse/third-party/axe/valid-langs.d.ts)
+0251.614 () Unzip progress: 40525 out of 55961 files (179.1 MB, themes/dominus-vobiscum/node_modules/lodash/_baseIndexOfWith.js)
+0257.614 () Unzip progress: 41526 out of 55961 files (180.6 MB, themes/dominus-vobiscum/node_modules/markdown-it/lib/presets/default.js)
+0264.219 () Unzip progress: 42527 out of 55961 files (186.9 MB, themes/dominus-vobiscum/node_modules/npm-package-json-lint/dist/src/rules/cpu-type.d.ts)
+0269.823 () Unzip progress: 43528 out of 55961 files (189.8 MB, themes/dominus-vobiscum/node_modules/parse5/dist/parser/formatting-element-list.d.ts)
+0275.482 () Unzip progress: 44529 out of 55961 files (192.6 MB, themes/dominus-vobiscum/node_modules/prompts/dist/util/lines.js)
+0280.753 () Unzip progress: 45530 out of 55961 files (198.9 MB, themes/dominus-vobiscum/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Binding.d.ts.map)
+0285.912 () Unzip progress: 46531 out of 55961 files (204.7 MB, themes/dominus-vobiscum/node_modules/puppeteer-core/node_modules/chromium-bidi/lib/esm/bidiMapper/modules/script/WindowRealm.d.ts)
+0290.573 () Unzip progress: 47532 out of 55961 files (218.9 MB, themes/dominus-vobiscum/node_modules/regenerate-unicode-properties/Script/Nyiakeng_Puachue_Hmong.js)
+0296.253 () Unzip progress: 48533 out of 55961 files (221.7 MB, themes/dominus-vobiscum/node_modules/rxjs/dist/cjs/internal/util/arrRemove.js)
+0302.008 () Unzip progress: 49534 out of 55961 files (222.7 MB, themes/dominus-vobiscum/node_modules/rxjs/dist/esm5/internal/util/ArgumentOutOfRangeError.js.map)
+0307.542 () Unzip progress: 50535 out of 55961 files (228.7 MB, themes/dominus-vobiscum/node_modules/sentence-case/README.md)
+0312.792 () Unzip progress: 51536 out of 55961 files (232.1 MB, themes/dominus-vobiscum/node_modules/stylelint/lib/rules/declaration-property-max-values/index.mjs)
+0319.524 () Unzip progress: 52537 out of 55961 files (235.8 MB, themes/dominus-vobiscum/node_modules/stylelint-scss/node_modules/css-tree/cjs/parser/sequence.cjs)
+0325.388 () Unzip progress: 53538 out of 55961 files (250.1 MB, themes/dominus-vobiscum/node_modules/tldts-core/dist/cjs/tsconfig.tsbuildinfo)
+0330.851 () Unzip progress: 54539 out of 55961 files (256.4 MB, themes/dominus-vobiscum/node_modules/web-vitals/dist/modules/lib/initMetric.js)
+0336.989 () Unzip progress: 55540 out of 55961 files (264.3 MB, themes/dominus-vobiscum/node_modules/webpack-sources/lib/helpers/readMappings.js)
+0339.809 () Unzip progress: 55961 out of 55961 files (279.1 MB, themes/index.php)
+0339.833 () Moving old data: filesystem method / updraft_dir is potentially possible
+0339.834 () Moving old data: can potentially use wp_filesystem method / -old
+0339.834 () Moving old data out of the way...
+0339.872 () Top-level entities being moved: dominus-vobiscum, dominus-vobiscum.zip, index.php, twenty-ten.zip, twentyten
+0339.882 () Moving unpacked backup into place...
+0353.234 () Top-level entities being moved: dominus-vobiscum, dominus-vobiscum.zip, index.php
+0353.273 () Cleaning up rubbish...
+0353.284 () Entity: uploads
+0353.284 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:46:"C:\xampp\htdocs\kalvari.org/wp-content/uploads";s:11:"description";s:7:"Uploads";}, last_one=)
+0353.285 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-uploads.zip, 12.8 MB)
+0353.286 () Unzipping backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-uploads.zip to C:/xampp/htdocs/kalvari.org/wp-content/upgrade/5141bd0d/ using UpdraftPlus_ZipArchive, starting index 0
+0353.420 () Unzip progress: 59 out of 59 files (12.9 MB, uploads/elementor/google-fonts/fonts/robotoslab-bngmuxzytxpivibgjjsb6ufo5qw54a.woff2)
+0353.421 () Moving old data: filesystem method / updraft_dir is potentially possible
+0353.422 () Moving old data: can potentially use wp_filesystem method / -old
+0353.422 () Moving old data out of the way...
+0353.434 () Moving unpacked backup into place...
+0353.444 () Cleaning up rubbish...
+0353.489 () Entity: others
+0353.489 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-others.zip, type=others, info=a:2:{s:4:"path";s:38:"C:\xampp\htdocs\kalvari.org/wp-content";s:11:"description";s:6:"Others";}, last_one=1)
+0353.490 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-others.zip, 0 MB)
+0353.492 () Unzipping backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-others.zip to C:/xampp/htdocs/kalvari.org/wp-content/upgrade/11d8bce9/ using UpdraftPlus_ZipArchive, starting index 0
+0353.520 () Unzip progress: 2 out of 2 files (28 B, index.php)
+0353.525 () Cleaning up rubbish...
+0355.790 () Plugin path wp-dummy-content-generator/wp_dummy_content_generator.php not found: de-activating.
+0355.794 () Elementor's CSS directory exists, and will be emptied (so that it will be automatically regenerated)
+0355.800 () Restore successful!
+0355.800 () Restore successful

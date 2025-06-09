@@ -1,0 +1,31 @@
+0000.021 () Opened log file at time: Mon, 09 Jun 2025 04:25:54 +0000 on http://localhost/kalvari.org
+0000.022 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.6 WP: 6.8.1 PHP: 8.0.30 (apache2handler, Windows NT LAPTOP-FMKECCH0 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.0.30 safe_mode: 0 max_execution_time: 900 memory_limit: 5120M (used: 10.7M | 12M) multisite: N openssl: OpenSSL 1.1.1t  7 Feb 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.022 () Free space on disk containing Updraft's temporary directory: 182428.4 MB
+0000.127 () Restore setup, now closing connection and starting restore over AJAX.
+0000.017 () Opened log file at time: Mon, 09 Jun 2025 04:25:54 +0000 on http://localhost/kalvari.org
+0000.017 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.6 WP: 6.8.1 PHP: 8.0.30 (apache2handler, Windows NT LAPTOP-FMKECCH0 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=33554432) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.0.30 safe_mode: 0 max_execution_time: 900 memory_limit: 5120M (used: 7.2M | 10M) multisite: N openssl: OpenSSL 1.1.1t  7 Feb 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.017 () Free space on disk containing Updraft's temporary directory: 182428.4 MB
+0000.024 () Ensuring WP_Filesystem is setup for a restore
+0000.026 () WP_Filesystem is setup and ready for a restore
+0000.032 () Restore job started. Entities to restore: plugins. Restore options: {"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.035 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\kalvari.org\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.036 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.038 () Entity: plugins
+0000.038 () restore_backup(backup_file=backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:46:"C:\xampp\htdocs\kalvari.org/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=1)
+0000.038 () Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip, 21.1 MB)
+0000.059 () Unzipping backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip to C:/xampp/htdocs/kalvari.org/wp-content/upgrade/bb8f92d5/ using UpdraftPlus_ZipArchive, starting index 0
+0000.566 () Unzip progress: 1002 out of 4554 files (925.9 KB, plugins/code-snippets/js/settings.ts)
+0001.968 () Unzip progress: 2003 out of 4554 files (6 MB, plugins/siteorigin-panels/js/lib/i18n/fr.min.js)
+0009.166 () Unzip progress: 3004 out of 4554 files (20.3 MB, plugins/so-widgets-bundle/widgets/simple-masonry/assets/banner.svg)
+0017.855 () Unzip progress: 4005 out of 4554 files (48.6 MB, plugins/updraftplus/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc)
+0023.658 () Unzip progress: 4554 out of 4554 files (53.5 MB, plugins/wp-fastest-cache/wpFastestCache.php)
+0023.662 () Moving old data: filesystem method / updraft_dir is potentially possible
+0023.662 () Moving old data: can potentially use wp_filesystem method / -old
+0023.662 () Moving old data out of the way...
+0024.915 () Top-level entities being moved: classic-editor, classic-widgets, code-snippets, index.php, kirki, show-current-template, siteorigin-panels, so-css, so-widgets-bundle, so-widgets-bundle.zip, tinymce-advanced, updraftplus, wp-crontrol, wp-fastest-cache
+0024.956 () Moving unpacked backup into place...
+0025.983 () Top-level entities being moved: classic-editor, classic-widgets, code-snippets, index.php, kirki, show-current-template, siteorigin-panels, so-css, so-widgets-bundle, so-widgets-bundle.zip, tinymce-advanced, updraftplus, wp-crontrol, wp-fastest-cache
+0026.014 () Cleaning up rubbish...
+0027.815 () Elementor's CSS directory exists, and will be emptied (so that it will be automatically regenerated)
+0027.906 () Restore successful!
+0027.906 () Restore successful

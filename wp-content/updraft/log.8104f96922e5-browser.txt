@@ -1,0 +1,144 @@
+0000.024 (R) [notice] Looking for db archive: file name: backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-db.gz
+0000.024 (R) [notice] Archive is expected to be size: 324.8 KB: OK
+0000.026 (R) [notice] Looking for plugins archive: file name: backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip
+0000.027 (R) [notice] Archive is expected to be size: 21578.6 KB: OK
+0000.028 (R) [notice] Looking for themes archive: file name: backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-themes.zip
+0000.029 (R) [notice] Archive is expected to be size: 93601.3 KB: OK
+0000.031 (R) [notice] Looking for uploads archive: file name: backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-uploads.zip
+0000.031 (R) [notice] Archive is expected to be size: 13141 KB: OK
+0000.033 (R) [notice] Looking for others archive: file name: backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-others.zip
+0000.033 (R) [notice] Archive is expected to be size: 0.3 KB: OK
+0000.035 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.037 (R) [notice] Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-db.gz, 0.3 Mb)
+0000.041 (R) [notice] Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.104 (R) [notice] Enabling Maintenance mode&#8230;
+0000.141 (R) [notice] Backup of: http://localhost/kalvari.org
+0000.141 (R) [notice] Content URL: http://localhost/kalvari.org/wp-content
+0000.141 (R) [notice] Uploads URL: http://localhost/kalvari.org/wp-content/uploads
+0000.141 (R) [notice] Old table prefix: 8qt98u_
+0000.141 (R) [notice] UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.141 (R) [notice] Site information: multisite = 0
+0000.141 (R) [notice] Site information: sql_mode = NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0000.142 (R) [notice] New table prefix: l4_
+0000.144 (R) [notice] Processing table (InnoDB):  8qt98u_options - will restore as: l4_options
+0000.215 (R) [notice] Atomic restore: dropping original table (8qt98u_options)
+0000.219 (R) [notice] Atomic restore: renaming new table (l4_options) to final table name (8qt98u_options)
+0000.240 (R) [notice] Processing table (InnoDB):  8qt98u_users - will restore as: l4_users
+0000.275 (R) [notice] Atomic restore: dropping original table (8qt98u_users)
+0000.280 (R) [notice] Atomic restore: renaming new table (l4_users) to final table name (8qt98u_users)
+0000.286 (R) [notice] Processing table (InnoDB):  8qt98u_usermeta - will restore as: l4_usermeta
+0000.312 (R) [notice] Atomic restore: dropping original table (8qt98u_usermeta)
+0000.316 (R) [notice] Atomic restore: renaming new table (l4_usermeta) to final table name (8qt98u_usermeta)
+0000.325 (R) [notice] Processing table (InnoDB):  8qt98u_commentmeta - will restore as: l4_commentmeta
+0000.346 (R) [notice] Atomic restore: dropping original table (8qt98u_commentmeta)
+0000.349 (R) [notice] Atomic restore: renaming new table (l4_commentmeta) to final table name (8qt98u_commentmeta)
+0000.356 (R) [notice] Processing table (InnoDB):  8qt98u_comments - will restore as: l4_comments
+0000.385 (R) [notice] Atomic restore: dropping original table (8qt98u_comments)
+0000.392 (R) [notice] Atomic restore: renaming new table (l4_comments) to final table name (8qt98u_comments)
+0000.397 (R) [notice] Processing table (InnoDB):  8qt98u_links - will restore as: l4_links
+0000.416 (R) [notice] Atomic restore: dropping original table (8qt98u_links)
+0000.423 (R) [notice] Atomic restore: renaming new table (l4_links) to final table name (8qt98u_links)
+0000.428 (R) [notice] Processing table (InnoDB):  8qt98u_postmeta - will restore as: l4_postmeta
+0000.464 (R) [notice] Atomic restore: dropping original table (8qt98u_postmeta)
+0000.468 (R) [notice] Atomic restore: renaming new table (l4_postmeta) to final table name (8qt98u_postmeta)
+0000.475 (R) [notice] Processing table (InnoDB):  8qt98u_posts - will restore as: l4_posts
+0000.533 (R) [notice] Atomic restore: dropping original table (8qt98u_posts)
+0000.537 (R) [notice] Atomic restore: renaming new table (l4_posts) to final table name (8qt98u_posts)
+0000.543 (R) [notice] Processing table (InnoDB):  8qt98u_snippets - will restore as: l4_snippets
+0000.568 (R) [notice] Atomic restore: dropping original table (8qt98u_snippets)
+0000.573 (R) [notice] Atomic restore: renaming new table (l4_snippets) to final table name (8qt98u_snippets)
+0000.578 (R) [notice] Processing table (InnoDB):  8qt98u_term_relationships - will restore as: l4_term_relationships
+0000.600 (R) [notice] Atomic restore: dropping original table (8qt98u_term_relationships)
+0000.603 (R) [notice] Atomic restore: renaming new table (l4_term_relationships) to final table name (8qt98u_term_relationships)
+0000.610 (R) [notice] Processing table (InnoDB):  8qt98u_term_taxonomy - will restore as: l4_term_taxonomy
+0000.630 (R) [notice] Atomic restore: dropping original table (8qt98u_term_taxonomy)
+0000.633 (R) [notice] Atomic restore: renaming new table (l4_term_taxonomy) to final table name (8qt98u_term_taxonomy)
+0000.637 (R) [notice] Processing table (InnoDB):  8qt98u_termmeta - will restore as: l4_termmeta
+0000.658 (R) [notice] Atomic restore: dropping original table (8qt98u_termmeta)
+0000.663 (R) [notice] Atomic restore: renaming new table (l4_termmeta) to final table name (8qt98u_termmeta)
+0000.667 (R) [notice] Processing table (InnoDB):  8qt98u_terms - will restore as: l4_terms
+0000.695 (R) [notice] Atomic restore: dropping original table (8qt98u_terms)
+0000.699 (R) [notice] Atomic restore: renaming new table (l4_terms) to final table name (8qt98u_terms)
+0000.703 (R) [notice] Processing table (InnoDB):  8qt98u_e_events - will restore as: l4_e_events
+0000.725 (R) [notice] Database queries processed: 50 in 0.68 seconds
+0000.735 (R) [notice] Disabling Maintenance mode&#8230;
+0000.735 (R) [notice] Atomic restore: dropping original table (8qt98u_e_events)
+0000.736 (R) [notice] Atomic restore: renaming new table (l4_e_events) to final table name (8qt98u_e_events)
+0000.741 (R) [notice] Finished: lines processed: 51 in 0.69 seconds
+0000.742 (R) [notice] Cleaning up rubbish...
+0000.742 (R) [notice] This option was not selected.
+0000.749 (R) [notice] Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-plugins.zip, 21.1 MB)
+0001.440 (R) [notice] Unzip progress: 1002 out of 4554 files (925.9 KB, plugins/code-snippets/js/settings.ts)
+0002.631 (R) [notice] Unzip progress: 2003 out of 4554 files (6 MB, plugins/siteorigin-panels/js/lib/i18n/fr.min.js)
+0010.042 (R) [notice] Unzip progress: 3004 out of 4554 files (20.3 MB, plugins/so-widgets-bundle/widgets/simple-masonry/assets/banner.svg)
+0018.629 (R) [notice] Unzip progress: 4005 out of 4554 files (48.6 MB, plugins/updraftplus/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc)
+0024.063 (R) [notice] Unzip progress: 4554 out of 4554 files (53.5 MB, plugins/wp-fastest-cache/wpFastestCache.php)
+0024.067 (R) [notice] Moving old data out of the way...
+0025.135 (R) [notice] Moving unpacked backup into place...
+0025.975 (R) [notice] Cleaning up rubbish...
+0026.027 (R) [notice] Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-themes.zip, 91.4 MB)
+0032.174 (R) [notice] Unzip progress: 5490 out of 55961 files (92 B, themes/dominus-vobiscum/build/index.asset.php)
+0036.217 (R) [notice] Unzip progress: 6491 out of 55961 files (7.1 MB, themes/dominus-vobiscum/node_modules/@babel/plugin-syntax-dynamic-import/lib/index.js)
+0043.301 (R) [notice] Unzip progress: 7492 out of 55961 files (12.3 MB, themes/dominus-vobiscum/node_modules/@bcoe/v8-coverage/dist/lib/compare.js)
+0050.687 (R) [notice] Unzip progress: 8493 out of 55961 files (17.7 MB, themes/dominus-vobiscum/node_modules/@jest/source-map/build/index.js)
+0058.413 (R) [notice] Unzip progress: 9494 out of 55961 files (38.7 MB, themes/dominus-vobiscum/node_modules/@puppeteer/browsers/lib/esm/CLI.js)
+0065.646 (R) [notice] Unzip progress: 10495 out of 55961 files (43.2 MB, themes/dominus-vobiscum/node_modules/@sentry/types/types/measurement.d.ts)
+0072.151 (R) [notice] Unzip progress: 11496 out of 55961 files (46.8 MB, themes/dominus-vobiscum/node_modules/@stylistic/stylelint-plugin/lib/rules/value-list-max-empty-lines/index.js)
+0078.622 (R) [notice] Unzip progress: 12497 out of 55961 files (55.7 MB, themes/dominus-vobiscum/node_modules/@typescript-eslint/eslint-plugin/docs/rules/explicit-module-boundary-types.md)
+0086.696 (R) [notice] Unzip progress: 13498 out of 55961 files (57.5 MB, themes/dominus-vobiscum/node_modules/@typescript-eslint/typescript-estree/dist/parseSettings/warnAboutTSVersion.js.map)
+0094.345 (R) [notice] Unzip progress: 14499 out of 55961 files (60.3 MB, themes/dominus-vobiscum/node_modules/@wordpress/e2e-test-utils-playwright/build-types/editor/switch-editor-tool.d.ts.map)
+0100.766 (R) [notice] Unzip progress: 15500 out of 55961 files (76.7 MB, themes/dominus-vobiscum/node_modules/ajv/dist/vocabularies/format/index.js)
+0108.081 (R) [notice] Unzip progress: 16501 out of 55961 files (80.6 MB, themes/dominus-vobiscum/node_modules/axe-core/locales/da.json)
+0114.524 (R) [notice] Unzip progress: 17502 out of 55961 files (87.7 MB, themes/dominus-vobiscum/node_modules/caniuse-lite/data/features/iframe-seamless.js)
+0122.068 (R) [notice] Unzip progress: 18503 out of 55961 files (93.5 MB, themes/dominus-vobiscum/node_modules/chromium-bidi/lib/esm/bidiMapper/modules/script/PreloadScript.js.map)
+0128.452 (R) [notice] Unzip progress: 19504 out of 55961 files (101.9 MB, themes/dominus-vobiscum/node_modules/core-js/actual/symbol/has-instance.js)
+0135.359 (R) [notice] Unzip progress: 20505 out of 55961 files (102 MB, themes/dominus-vobiscum/node_modules/core-js/features/string/virtual/replace-all.js)
+0142.437 (R) [notice] Unzip progress: 21506 out of 55961 files (102.4 MB, themes/dominus-vobiscum/node_modules/core-js/internals/shared-store.js)
+0151.275 (R) [notice] Unzip progress: 22507 out of 55961 files (103 MB, themes/dominus-vobiscum/node_modules/core-js/stable/string/from-code-point.js)
+0158.131 (R) [notice] Unzip progress: 23508 out of 55961 files (103.9 MB, themes/dominus-vobiscum/node_modules/core-js-pure/es/string/virtual/code-point-at.js)
+0164.402 (R) [notice] Unzip progress: 24509 out of 55961 files (104 MB, themes/dominus-vobiscum/node_modules/core-js-pure/full/math/f16round.js)
+0169.338 (R) [notice] Unzip progress: 25510 out of 55961 files (104.6 MB, themes/dominus-vobiscum/node_modules/core-js-pure/modules/esnext.iterator.filter.js)
+0174.349 (R) [notice] Unzip progress: 26511 out of 55961 files (105.6 MB, themes/dominus-vobiscum/node_modules/css-loader/node_modules/semver/functions/prerelease.js)
+0180.003 (R) [notice] Unzip progress: 27512 out of 55961 files (109.7 MB, themes/dominus-vobiscum/node_modules/data-view-byte-length/tsconfig.json)
+0186.494 (R) [notice] Unzip progress: 28513 out of 55961 files (115.6 MB, themes/dominus-vobiscum/node_modules/es-abstract/2017/SymbolDescriptiveString.js)
+0192.176 (R) [notice] Unzip progress: 29514 out of 55961 files (116.4 MB, themes/dominus-vobiscum/node_modules/es-abstract/2022/OrdinaryDefineOwnProperty.js)
+0194.342 (R) [notice] Unzip progress: 30515 out of 55961 files (117.9 MB, themes/dominus-vobiscum/node_modules/es-to-primitive/es6.js)
+0198.057 (R) [notice] Unzip progress: 31516 out of 55961 files (125 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-jest/lib/rules/valid-expect.js)
+0204.790 (R) [notice] Unzip progress: 32517 out of 55961 files (126.8 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-jest/node_modules/@typescript-eslint/visitor-keys/dist/index.js)
+0210.429 (R) [notice] Unzip progress: 33518 out of 55961 files (130.3 MB, themes/dominus-vobiscum/node_modules/eslint-plugin-react/node_modules/resolve/test/mock_sync.js)
+0215.913 (R) [notice] Unzip progress: 34519 out of 55961 files (135.4 MB, themes/dominus-vobiscum/node_modules/has-proto/test/index.js)
+0221.853 (R) [notice] Unzip progress: 35520 out of 55961 files (139 MB, themes/dominus-vobiscum/node_modules/istanbul-lib-source-maps/lib/pathutils.js)
+0227.782 (R) [notice] Unzip progress: 36521 out of 55961 files (144.9 MB, themes/dominus-vobiscum/node_modules/jsdom/lib/jsdom/living/nodes/DOMImplementation-impl.js)
+0233.780 (R) [notice] Unzip progress: 37522 out of 55961 files (149.6 MB, themes/dominus-vobiscum/node_modules/lighthouse/core/computed/unused-javascript-summary.d.ts)
+0240.602 (R) [notice] Unzip progress: 38523 out of 55961 files (155.8 MB, themes/dominus-vobiscum/node_modules/lighthouse/node_modules/puppeteer-core/lib/esm/puppeteer/api/Environment.d.ts)
+0246.795 (R) [notice] Unzip progress: 39524 out of 55961 files (177 MB, themes/dominus-vobiscum/node_modules/lighthouse/third-party/axe/valid-langs.d.ts)
+0251.614 (R) [notice] Unzip progress: 40525 out of 55961 files (179.1 MB, themes/dominus-vobiscum/node_modules/lodash/_baseIndexOfWith.js)
+0257.614 (R) [notice] Unzip progress: 41526 out of 55961 files (180.6 MB, themes/dominus-vobiscum/node_modules/markdown-it/lib/presets/default.js)
+0264.218 (R) [notice] Unzip progress: 42527 out of 55961 files (186.9 MB, themes/dominus-vobiscum/node_modules/npm-package-json-lint/dist/src/rules/cpu-type.d.ts)
+0269.823 (R) [notice] Unzip progress: 43528 out of 55961 files (189.8 MB, themes/dominus-vobiscum/node_modules/parse5/dist/parser/formatting-element-list.d.ts)
+0275.482 (R) [notice] Unzip progress: 44529 out of 55961 files (192.6 MB, themes/dominus-vobiscum/node_modules/prompts/dist/util/lines.js)
+0280.753 (R) [notice] Unzip progress: 45530 out of 55961 files (198.9 MB, themes/dominus-vobiscum/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Binding.d.ts.map)
+0285.912 (R) [notice] Unzip progress: 46531 out of 55961 files (204.7 MB, themes/dominus-vobiscum/node_modules/puppeteer-core/node_modules/chromium-bidi/lib/esm/bidiMapper/modules/script/WindowRealm.d.ts)
+0290.572 (R) [notice] Unzip progress: 47532 out of 55961 files (218.9 MB, themes/dominus-vobiscum/node_modules/regenerate-unicode-properties/Script/Nyiakeng_Puachue_Hmong.js)
+0296.252 (R) [notice] Unzip progress: 48533 out of 55961 files (221.7 MB, themes/dominus-vobiscum/node_modules/rxjs/dist/cjs/internal/util/arrRemove.js)
+0302.008 (R) [notice] Unzip progress: 49534 out of 55961 files (222.7 MB, themes/dominus-vobiscum/node_modules/rxjs/dist/esm5/internal/util/ArgumentOutOfRangeError.js.map)
+0307.542 (R) [notice] Unzip progress: 50535 out of 55961 files (228.7 MB, themes/dominus-vobiscum/node_modules/sentence-case/README.md)
+0312.791 (R) [notice] Unzip progress: 51536 out of 55961 files (232.1 MB, themes/dominus-vobiscum/node_modules/stylelint/lib/rules/declaration-property-max-values/index.mjs)
+0319.524 (R) [notice] Unzip progress: 52537 out of 55961 files (235.8 MB, themes/dominus-vobiscum/node_modules/stylelint-scss/node_modules/css-tree/cjs/parser/sequence.cjs)
+0325.388 (R) [notice] Unzip progress: 53538 out of 55961 files (250.1 MB, themes/dominus-vobiscum/node_modules/tldts-core/dist/cjs/tsconfig.tsbuildinfo)
+0330.851 (R) [notice] Unzip progress: 54539 out of 55961 files (256.4 MB, themes/dominus-vobiscum/node_modules/web-vitals/dist/modules/lib/initMetric.js)
+0336.989 (R) [notice] Unzip progress: 55540 out of 55961 files (264.3 MB, themes/dominus-vobiscum/node_modules/webpack-sources/lib/helpers/readMappings.js)
+0339.809 (R) [notice] Unzip progress: 55961 out of 55961 files (279.1 MB, themes/index.php)
+0339.834 (R) [notice] Moving old data out of the way...
+0339.882 (R) [notice] Moving unpacked backup into place...
+0353.273 (R) [notice] Cleaning up rubbish...
+0353.285 (R) [notice] Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-uploads.zip, 12.8 MB)
+0353.420 (R) [notice] Unzip progress: 59 out of 59 files (12.9 MB, uploads/elementor/google-fonts/fonts/robotoslab-bngmuxzytxpivibgjjsb6ufo5qw54a.woff2)
+0353.422 (R) [notice] Moving old data out of the way...
+0353.434 (R) [notice] Moving unpacked backup into place...
+0353.444 (R) [notice] Cleaning up rubbish...
+0353.490 (R) [notice] Unpacking backup... (backup_2025-06-08-1904_Gereja_Kalvari_Lubang_Buaya_f50edf6a6060-others.zip, 0 MB)
+0353.520 (R) [notice] Unzip progress: 2 out of 2 files (28 B, index.php)
+0353.525 (R) [notice] Cleaning up rubbish...
+0355.790 (R) [notice] Plugin path wp-dummy-content-generator/wp_dummy_content_generator.php not found: de-activating.
+0355.800 (R) [notice] Restore successful!

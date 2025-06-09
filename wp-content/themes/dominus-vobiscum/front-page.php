@@ -43,9 +43,13 @@ get_header();
 
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-8">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <!-- Konten placeholder --></p>
     </div>
+    <div class="col-4">
+      <p>Sidebar</p>
+    </div>
+
   </div>
 </div>
 
