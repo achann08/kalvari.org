@@ -13,7 +13,7 @@ get_header();
                 <div class="breadcrumbs py-4">
                   <?php echo custom_breadcrumbs(); ?>
                 </div>
-                <h1 class="entry-title"><?php echo get_queried_object()->post_title; ?></h1>
+                <h1 class="entry-title"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
             </div>
             <div class="entry-content">
                 <?php
@@ -74,7 +74,7 @@ get_header();
                                           </h2>
                                           <div class="d-flex align-items-center my-3">
                                               <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" class="rounded-circle" style="width: 25px; height: 25px;">
-                                              <div class="ps-2">
+                                              <div class="px-2">
                                                   <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author(); ?></a>
                                               </div>
                                           </div>
@@ -87,23 +87,23 @@ get_header();
                       
                       endwhile;
 
-                          $total_pages = $query->max_num_pages;
+                        $total_pages = $query->max_num_pages;
 
-                          if($total_pages > 1){
-                              $big = 999999999;
-                              echo '<div id="paginationAjax" class="my-4">';
-                              echo paginate_links( array(
-                                  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                  'format' => '?paged=%#%',
-                                  'current' => max( 1, get_query_var('paged') ),
-                                  'total' => $total_pages,
-                                  'prev_text'    => __('« prev'),
-                                  'next_text'    => __('next »')
-                              ) );
-                              echo '</div>';
-                          }
-                          wp_reset_postdata(); 
-                      ?>
+                        if($total_pages > 1){
+                            $big = 999999999;
+                            echo '<div id="paginationAjax">';
+                            echo paginate_links( array(
+                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                'format' => '?paged=%#%',
+                                'current' => max( 1, get_query_var('paged') ),
+                                'total' => $total_pages,
+                                'prev_text'    => __('« prev'),
+                                'next_text'    => __('next »')
+                            ) );
+                            echo '</div>';
+                        }
+                        wp_reset_postdata(); 
+                    ?>
                   <?php else: ?>
                       <p>Tidak ada yang dapat ditampilkan</p>
                   <?php endif; ?>

@@ -46,6 +46,8 @@ function dominus_vobiscum_config(){
 		'flex_height'	=> true,
 		'flex_width'	=> true
 	));
+    
+    add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'dominus_vobiscum_config', 0 );
 
@@ -110,6 +112,9 @@ function remove_admin_bar_header() {
 add_action('get_header', 'remove_admin_bar_header');
 
 function custom_breadcrumbs() {
+
+    global $post;
+
     $separator  = ' » ';
     $home_label = 'Home';
     
@@ -123,8 +128,13 @@ function custom_breadcrumbs() {
         echo $separator;
         
         if ( is_single() ) {
-            // Single post
-            the_title();
+             // Handle single posts - add blog page
+            $blog_page_id = get_option('page_for_posts');
+            if ($blog_page_id) {
+                echo '<a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a>';
+                echo $separator;
+            }
+            the_title(); // Current post title
             
         } elseif ( is_page() ) {
             global $post;
@@ -162,7 +172,7 @@ function custom_breadcrumbs() {
         
     } else {
         // PERBAIKAN DI SINI: Handle khusus untuk homepage
-        $postTitle = get_queried_object()->post_title;
+        $postTitle = get_the_title(get_option('page_for_posts'));
         
         // Jika frontpage adalah halaman statis, gunakan judulnya
         if ( $postTitle ) {
