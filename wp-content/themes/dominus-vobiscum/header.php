@@ -34,7 +34,7 @@ $toggler_class = $is_front_page ? 'border-light' : 'border-light';
             <?php if ($logo_img): ?>
               <?php echo $logo_img; ?>
             <?php endif; ?>
-            <div class="site-branding-text ml-2">
+            <div class="site-branding-text mb-2 ml-2">
               <span class="site-title mb-0 <?php echo $title_class; ?>"><?php bloginfo('name'); ?></span>
               <small class="site-description d-block"><?php bloginfo('description'); ?></small>
             </div>

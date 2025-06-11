@@ -1,6 +1,6 @@
 /* mobile.css */
 /* Ubah breakpoint menjadi mobile-only (di bawah 768px) */
-@media (max-width: 821px) {
+@media (max-width: 991px), (max-width: 844px) and (orientation: landscape) {
   .offcanvas-collapse {
     position: fixed;
     top: 0;

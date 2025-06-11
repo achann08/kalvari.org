@@ -1,12 +1,20 @@
 @use "rfs/scss" as *;
 
 .site-description{
-    @include font-size(12px);
+    @include font-size(11px);
 }
 .site-title{
-    @include font-size(18px);
+    @include font-size(16px);
 }
 
 .nav-link{
     @include font-size(18px);
+}
+
+.card-text{
+    @include font-size(15px);
+}
+
+.badge{
+    @include font-size(12px !important);
 }

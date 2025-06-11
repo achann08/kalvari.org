@@ -52,9 +52,13 @@ class dc_navbarJS {
     }
 
     positionOffcanvas() {
-        // Hanya di mobile (<768px)
-        if ($(window).width() >= 821) {
-            this.$offcanvas.removeAttr('style');
+        // Perbaikan: Gunakan 991px sebagai breakpoint mobile
+        if ($(window).width() >= 992) {
+            this.$offcanvas
+            .removeAttr('style')
+            .removeClass('open');
+            this.$toggler.removeClass('active');
+            this.updateNavbarState();
             return;
         }
 
@@ -75,19 +79,20 @@ class dc_navbarJS {
     updateNavbarState() {
         const isScrolled = $(window).scrollTop() > this.scrollDistance;
         const isMenuOpen = this.$offcanvas.hasClass('open');
-        const isFrontPage = $('body').hasClass('home'); // Cek apakah halaman home
+        const isFrontPage = $('body').hasClass('home');
+        
+        // Perbaikan: Tambahkan kondisi landscape mobile
+        const isMobileView = $(window).width() < 992 || 
+                            ($(window).width() < 844 && $(window).height() < 450);
 
-        // Jika bukan front page, langsung set state scrolled
-        if (!isFrontPage) {
-            this.setScrolledState();
-            return;
-        }
-
-        // Jika front page, update berdasarkan scroll/menu
-        if (isScrolled || isMenuOpen) {
+        if (!isFrontPage || isMobileView) {
             this.setScrolledState();
         } else {
+            if (isScrolled || isMenuOpen) {
+            this.setScrolledState();
+            } else {
             this.setTransparentState();
+            }
         }
     }
 

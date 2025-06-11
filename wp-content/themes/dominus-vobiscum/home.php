@@ -35,9 +35,10 @@ get_header();
                   );
 
                   $query = new WP_Query($query_args);
-
+                  $total_pages = $query->max_num_pages;
               ?>
 
+              <!-- Pindahkan jumlah artikel ke luar #postAjax -->
               <p>Menampilkan <?php echo $query->found_posts; ?> artikel</p>
 
               <div class="row" id="postAjax">
@@ -83,31 +84,36 @@ get_header();
                                   </div>
                               </article>
                           </div>
-                      <?php 
-                      
-                      endwhile;
-
-                        $total_pages = $query->max_num_pages;
-
-                        if($total_pages > 1){
-                            $big = 999999999;
-                            echo '<div id="paginationAjax">';
-                            echo paginate_links( array(
-                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                'format' => '?paged=%#%',
-                                'current' => max( 1, get_query_var('paged') ),
-                                'total' => $total_pages,
-                                'prev_text'    => __('« prev'),
-                                'next_text'    => __('next »')
-                            ) );
-                            echo '</div>';
-                        }
-                        wp_reset_postdata(); 
-                    ?>
+                      <?php endwhile; ?>
                   <?php else: ?>
-                      <p>Tidak ada yang dapat ditampilkan</p>
+                      <div class="col-12">
+                          <p>Tidak ada yang dapat ditampilkan</p>
+                      </div>
                   <?php endif; ?>
               </div>
+
+              <?php if ($query->have_posts() && $total_pages > 1): ?>
+              <div class="row mt-5">
+                  <div class="col-12 d-flex justify-content-center">
+                      <!-- Tambahkan ID untuk pagination -->
+                      <div id="paginationAjax">
+                          <?php
+                              $big = 999999999;
+                              echo paginate_links( array(
+                                  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                  'format' => '?paged=%#%',
+                                  'current' => max( 1, get_query_var('paged') ),
+                                  'total' => $total_pages,
+                                  'prev_text' => __('« prev'),
+                                  'next_text' => __('next »')
+                              ) );
+                          ?>
+                      </div>
+                  </div>
+              </div>
+              <?php endif; ?>
+
+              <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </div>
