@@ -1,0 +1,244 @@
+0000.000 (0) Opened log file at time: Wed, 11 Jun 2025 19:21:11 +0000 on http://localhost/kalvari.org
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.6 WP: 6.8.1 PHP: 8.0.30 (apache2handler, Windows NT LAPTOP-2564MNHK 10.0 build 19045 (Windows 10) AMD64) MySQL: 10.4.32-MariaDB (max packet size=1048576) WPLANG: en_US Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.0.30 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 50M | 52M) multisite: N openssl: OpenSSL 1.1.1t  7 Feb 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.003 (0) Free space on disk containing Updraft's temporary directory: 53711.3 MB
+0000.006 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.034 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.042 (0) Set semaphore last lock (fd) time to 2025-06-11 19:21:11
+0000.043 (0) Semaphore lock (fd) complete
+0000.047 (0) Backup run: resumption=0, nonce=f7b08f00c8e1, file_nonce=f7b08f00c8e1 begun at=1749669671 (0s ago), job type=backup
+0000.049 (0) Scheduling a resumption (1) after 300 seconds (1749669971) in case this run gets aborted
+0000.082 (0) Checking if we have a zip executable available
+0000.086 (0) Creation of backups of directories: beginning
+0000.092 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0001.639 (0) Total entities for the zip file: 961 directories, 4323 files (0 skipped as non-modified), 64.3 MB
+0001.674 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0001.704 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0001.735 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0001.766 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0001.797 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0001.831 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0001.863 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0001.895 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0001.927 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0001.959 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0001.961 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (5 MB, 4323 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0022.377 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1100 files added (on-disk size: 1798.7 KB)
+0022.425 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1200 files added (on-disk size: 1798.7 KB)
+0022.476 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1300 files added (on-disk size: 1798.7 KB)
+0022.523 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1400 files added (on-disk size: 1798.7 KB)
+0022.570 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1500 files added (on-disk size: 1798.7 KB)
+0022.618 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1600 files added (on-disk size: 1798.7 KB)
+0022.668 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1700 files added (on-disk size: 1798.7 KB)
+0022.706 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1800 files added (on-disk size: 1798.7 KB)
+0022.743 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 1900 files added (on-disk size: 1798.7 KB)
+0022.780 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2000 files added (on-disk size: 1798.7 KB)
+0022.783 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (14.6 MB, 4323 files batched, 1001 (2002) added so far); re-opening (prior size: 1798.7 KB)
+0044.473 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2100 files added (on-disk size: 7636.7 KB)
+0044.511 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2200 files added (on-disk size: 7636.7 KB)
+0044.544 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2300 files added (on-disk size: 7636.7 KB)
+0044.577 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2400 files added (on-disk size: 7636.7 KB)
+0044.608 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2500 files added (on-disk size: 7636.7 KB)
+0044.640 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2600 files added (on-disk size: 7636.7 KB)
+0044.662 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25.2 MB, 4323 files batched, 672 (2674) added so far); re-opening (prior size: 7636.7 KB)
+0061.203 (0) A useful amount of data was added after this amount of zip processing: 17.6 s (normalised: 17.4 s, rate: 1471.9 KB/s)
+0061.269 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2700 files added (on-disk size: 18497.3 KB)
+0061.308 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2800 files added (on-disk size: 18497.3 KB)
+0061.352 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 2900 files added (on-disk size: 18497.3 KB)
+0061.395 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3000 files added (on-disk size: 18497.3 KB)
+0061.443 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3100 files added (on-disk size: 18497.3 KB)
+0061.555 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3200 files added (on-disk size: 18497.3 KB)
+0061.625 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3300 files added (on-disk size: 18497.3 KB)
+0061.688 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3400 files added (on-disk size: 18497.3 KB)
+0061.755 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3500 files added (on-disk size: 18497.3 KB)
+0061.831 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3600 files added (on-disk size: 18497.3 KB)
+0061.881 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (7.8 MB, 4323 files batched, 1001 (3675) added so far); re-opening (prior size: 18497.3 KB)
+0089.211 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3700 files added (on-disk size: 21362.3 KB)
+0089.243 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3800 files added (on-disk size: 21362.3 KB)
+0089.275 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 3900 files added (on-disk size: 21362.3 KB)
+0089.306 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 4000 files added (on-disk size: 21362.3 KB)
+0089.335 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 4100 files added (on-disk size: 21362.3 KB)
+0089.364 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 4200 files added (on-disk size: 21362.3 KB)
+0089.393 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.tmp: 4300 files added (on-disk size: 21362.3 KB)
+0110.905 (0) Creating zip file manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.list-temp.tmp)
+0110.923 (0) Successfully created zip file manifest (size: 357734)
+0111.169 (0) Created plugins zip (0) - 25775.4 KB in 111.1 s (232.1 KB/s) (sha1: f53c0642af1f7a1a13d5bff74106d69913c5fb69, sha256: 01833eb7feb343301fb436a2225dc9be39e6f20b7bfc5051d1dd4c55c3d34419)
+0111.177 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0111.178 (0) No remote despatch: user chose no remote backup service
+0111.180 (0) Recording as successfully uploaded: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip
+0111.183 (0) Deleting zip manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip.list.tmp)
+0111.186 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0111.188 (0) Number of backup sets in history: 0; groups (db): 1
+0111.190 (0) Number of backup sets in history: 0; groups (files): 1
+0111.191 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0111.198 (0) Beginning creation of dump of themes (split every: 400 MB)
+0111.214 (0) Total entities for the zip file: 10 directories, 42 files (0 skipped as non-modified), 12.8 MB
+0111.594 (0) Creating zip file manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-themes.zip.list-temp.tmp)
+0111.597 (0) Successfully created zip file manifest (size: 2276)
+0111.713 (0) Created themes zip (0) - 12364.5 KB in 0.5 s (24257.3 KB/s) (sha1: ba60f7d4afc7b83172f0829832361601489fd713, sha256: 1b400175b623dabba576ff887a467f9eef94e033e1da4380bb6e1680efbdb93d)
+0111.723 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0111.726 (0) No remote despatch: user chose no remote backup service
+0111.728 (0) Recording as successfully uploaded: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-themes.zip
+0111.732 (0) Deleting zip manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-themes.zip.list.tmp)
+0111.737 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0111.739 (0) Number of backup sets in history: 0; groups (db): 1
+0111.741 (0) Number of backup sets in history: 0; groups (files): 1
+0111.743 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0111.760 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0111.762 (0) Looking for candidates to backup in: C:\xampp\htdocs\kalvari.org/wp-content/uploads
+0111.763 (0) finding files: 2025: adding to list (1)
+0111.765 (0) finding files: elementor: adding to list (2)
+0111.767 (0) finding files: siteorigin-widgets: adding to list (3)
+0111.769 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0111.862 (0) Total entities for the zip file: 10 directories, 350 files (0 skipped as non-modified), 18.5 MB
+0111.896 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0111.929 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0111.963 (0) Zip: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0114.600 (0) Creating zip file manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip.list-temp.tmp)
+0114.605 (0) Successfully created zip file manifest (size: 25122)
+0114.770 (0) Created uploads zip (0) - 18915 KB in 3 s (6316.9 KB/s) (sha1: 3387612aa4753b47beb24a375bcda7a8f4be4b20, sha256: c2010ebe93e32808cd9509d093c61c105e9fe4314d21142bc982fc6d8c5d39cb)
+0114.779 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0114.781 (0) No remote despatch: user chose no remote backup service
+0114.784 (0) Recording as successfully uploaded: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip
+0114.788 (0) Deleting zip manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip.list.tmp)
+0114.792 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0114.795 (0) Number of backup sets in history: 0; groups (db): 1
+0114.797 (0) Number of backup sets in history: 0; groups (files): 1
+0114.798 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0114.806 (0) No backup of mu-plugins: excluded by user's options
+0114.810 (0) Beginning backup of other directories found in the content directory (index: 0)
+0114.812 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0114.813 (0) Looking for candidates to backup in: C:\xampp\htdocs\kalvari.org/wp-content
+0114.815 (0) finding files: cache: skipping: excluded by options
+0114.817 (0) finding files: index.php: adding to list (1)
+0114.819 (0) finding files: plugins: skipping: this is the plugins directory
+0114.821 (0) finding files: themes: skipping: this is the themes directory
+0114.822 (0) finding files: updraft: skipping: this is the updraft directory
+0114.824 (0) finding files: upgrade: skipping: excluded by options
+0114.826 (0) finding files: upgrade-temp-backup: adding to list (2)
+0114.828 (0) finding files: uploads: skipping: this is the uploads directory
+0114.834 (0) Total entities for the zip file: 1 directories, 1 files (0 skipped as non-modified), 0 MB
+0114.869 (0) Creating zip file manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-others.zip.list-temp.tmp)
+0114.871 (0) Successfully created zip file manifest (size: 43)
+0114.880 (0) Created others zip (0) - 0.3 KB in 0 s (5.4 KB/s) (sha1: 3aceba9fab8f2fcf73c44bdf91b50aad811bfa5d, sha256: 59642b743812171c0a0b0c63ff06756418b875bdb407bf6b922c03921ce870c4)
+0114.886 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0114.887 (0) No remote despatch: user chose no remote backup service
+0114.888 (0) Recording as successfully uploaded: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-others.zip
+0114.890 (0) Deleting zip manifest (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-others.zip.list.tmp)
+0114.893 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0114.894 (0) Number of backup sets in history: 0; groups (db): 1
+0114.896 (0) Number of backup sets in history: 0; groups (files): 1
+0114.897 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0114.907 (0) Saving backup status to database (elements: 8)
+0114.911 (0) Beginning creation of database dump (WordPress DB)
+0114.914 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION
+0114.944 (0) Table 8qt98u_options: Total expected rows (via COUNT): 269
+0114.945 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0114.989 (0) Table 8qt98u_options: Rows added in this batch (next record: 1249): 265 (uncompressed bytes in this segment=1293903) in 0.06 seconds
+0115.000 (0) Table 8qt98u_options: finishing file(s) (2, 260 KB)
+0115.009 (0) Table 8qt98u_users: Total expected rows (via COUNT): 1
+0115.010 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.013 (0) Table 8qt98u_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1259) in 0.01 seconds
+0115.020 (0) Table 8qt98u_users: finishing file(s) (2, 0.6 KB)
+0115.030 (0) Table 8qt98u_usermeta: Total expected rows (via COUNT): 22
+0115.031 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.032 (0) Table 8qt98u_usermeta: Rows added in this batch (next record: 22): 22 (uncompressed bytes in this segment=2130) in 0.01 seconds
+0115.040 (0) Table 8qt98u_usermeta: finishing file(s) (2, 1.1 KB)
+0115.051 (0) Table 8qt98u_commentmeta: Total expected rows (via COUNT): 0
+0115.054 (0) Table 8qt98u_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=658) in 0.01 seconds
+0115.063 (0) Table 8qt98u_commentmeta: finishing file(s) (2, 0.4 KB)
+0115.072 (0) Table 8qt98u_comments: Total expected rows (via COUNT): 1
+0115.073 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.077 (0) Table 8qt98u_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1910) in 0.01 seconds
+0115.083 (0) Table 8qt98u_comments: finishing file(s) (2, 0.7 KB)
+0115.108 (0) Table 8qt98u_links: Total expected rows (via COUNT): 0
+0115.111 (0) Table 8qt98u_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1051) in 0.01 seconds
+0115.119 (0) Table 8qt98u_links: finishing file(s) (2, 0.5 KB)
+0115.139 (0) Table 8qt98u_postmeta: Total expected rows (via COUNT): 733
+0115.141 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.151 (0) Table 8qt98u_postmeta: Rows added in this batch (next record: 1023): 733 (uncompressed bytes in this segment=171368) in 0.03 seconds
+0115.162 (0) Table 8qt98u_postmeta: finishing file(s) (2, 12.9 KB)
+0115.180 (0) Table 8qt98u_posts: Total expected rows (via COUNT): 330
+0115.182 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.200 (0) Table 8qt98u_posts: Rows added in this batch (next record: 368): 330 (uncompressed bytes in this segment=453209) in 0.03 seconds
+0115.208 (0) Table 8qt98u_posts: finishing file(s) (2, 51.9 KB)
+0115.219 (0) Table 8qt98u_snippets: Total expected rows (via COUNT): 6
+0115.220 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.224 (0) Table 8qt98u_snippets: Rows added in this batch (next record: 9): 6 (uncompressed bytes in this segment=18837) in 0.01 seconds
+0115.232 (0) Table 8qt98u_snippets: finishing file(s) (2, 5 KB)
+0115.239 (0) Table 8qt98u_term_relationships: Total expected rows (approximate): 136
+0115.244 (0) Table 8qt98u_term_relationships: Rows added in this batch (next record: 100000): 142 (uncompressed bytes in this segment=2729) in 0.01 seconds
+0115.251 (0) Table 8qt98u_term_relationships: finishing file(s) (2, 0.8 KB)
+0115.261 (0) Table 8qt98u_term_taxonomy: Total expected rows (via COUNT): 12
+0115.263 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.266 (0) Table 8qt98u_term_taxonomy: Rows added in this batch (next record: 12): 12 (uncompressed bytes in this segment=1236) in 0.01 seconds
+0115.274 (0) Table 8qt98u_term_taxonomy: finishing file(s) (2, 0.5 KB)
+0115.294 (0) Table 8qt98u_termmeta: Total expected rows (via COUNT): 0
+0115.297 (0) Table 8qt98u_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=631) in 0.01 seconds
+0115.304 (0) Table 8qt98u_termmeta: finishing file(s) (2, 0.4 KB)
+0115.312 (0) Table 8qt98u_terms: Total expected rows (via COUNT): 12
+0115.314 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.317 (0) Table 8qt98u_terms: Rows added in this batch (next record: 12): 12 (uncompressed bytes in this segment=1016) in 0.01 seconds
+0115.324 (0) Table 8qt98u_terms: finishing file(s) (2, 0.5 KB)
+0115.343 (0) Table 8qt98u_e_events: Total expected rows (via COUNT): 2
+0115.344 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0115.346 (0) Table 8qt98u_e_events: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=986) in 0.01 seconds
+0115.353 (0) Table 8qt98u_e_events: finishing file(s) (2, 0.5 KB)
+0115.354 (0) PHP event: code E_WARNING: filemtime(): stat failed for C:\xampp\htdocs\kalvari.org/wp-content/updraft/backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db.gz (line 1923, C:\xampp\htdocs\kalvari.org\wp-content\plugins\updraftplus\backup.php)
+0115.357 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_options.table.tmpr1250.gz (1/14/fopen): adding to final database dump
+0115.366 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_options.table.gz (2/14/fopen): adding to final database dump
+0115.367 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_users.table.tmpr2.gz (3/14/fopen): adding to final database dump
+0115.368 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_users.table.gz (4/14/fopen): adding to final database dump
+0115.370 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_usermeta.table.tmpr23.gz (5/14/fopen): adding to final database dump
+0115.372 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_usermeta.table.gz (6/14/fopen): adding to final database dump
+0115.374 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_commentmeta.table.tmpr0.gz (7/14/fopen): adding to final database dump
+0115.376 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_commentmeta.table.gz (8/14/fopen): adding to final database dump
+0115.378 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_comments.table.tmpr2.gz (9/14/fopen): adding to final database dump
+0115.380 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_comments.table.gz (10/14/fopen): adding to final database dump
+0115.382 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_links.table.tmpr0.gz (11/14/fopen): adding to final database dump
+0115.383 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_links.table.gz (12/14/fopen): adding to final database dump
+0115.385 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_postmeta.table.tmpr1024.gz (13/14/fopen): adding to final database dump
+0115.388 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_postmeta.table.gz (14/14/fopen): adding to final database dump
+0115.389 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_posts.table.tmpr369.gz (15/14/fopen): adding to final database dump
+0115.392 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_posts.table.gz (16/14/fopen): adding to final database dump
+0115.394 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_snippets.table.tmpr10.gz (17/14/fopen): adding to final database dump
+0115.396 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_snippets.table.gz (18/14/fopen): adding to final database dump
+0115.398 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_term_relationships.table.tmpr100001.gz (19/14/fopen): adding to final database dump
+0115.400 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_term_relationships.table.gz (20/14/fopen): adding to final database dump
+0115.402 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_term_taxonomy.table.tmpr13.gz (21/14/fopen): adding to final database dump
+0115.404 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_term_taxonomy.table.gz (22/14/fopen): adding to final database dump
+0115.406 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_termmeta.table.tmpr0.gz (23/14/fopen): adding to final database dump
+0115.407 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_termmeta.table.gz (24/14/fopen): adding to final database dump
+0115.409 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_terms.table.tmpr13.gz (25/14/fopen): adding to final database dump
+0115.411 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_terms.table.gz (26/14/fopen): adding to final database dump
+0115.413 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_e_events.table.tmpr3.gz (27/14/fopen): adding to final database dump
+0115.414 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db-table-8qt98u_e_events.table.gz (28/14/fopen): adding to final database dump
+0115.463 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db.gz: finished writing out complete database file (336.2 KB)
+0115.481 (0) Total database tables backed up: 14 (backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db.gz, size: 344410, sha1: b8b6da1de717812796b2e4223a466366d6c124c4, sha256: ec080c4271734e47f39bf625ab994279a2ea4a49091a9572e53c1abcc8900dcc)
+0115.488 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-plugins.zip: plugins: This file has already been successfully processed
+0115.489 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-themes.zip: themes: This file has already been successfully processed
+0115.490 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-uploads.zip: uploads: This file has already been successfully processed
+0115.491 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-others.zip: others: This file has already been successfully processed
+0115.492 (0) backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db.gz: db: This file has not yet been successfully uploaded: will queue
+0115.493 (0) Saving backup history. Total backup size: 56 MB
+0115.495 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0115.499 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0115.500 (0) No remote despatch: user chose no remote backup service
+0115.501 (0) Recording as successfully uploaded: backup_2025-06-11-1921_Gereja_Kalvari_Lubang_Buaya_f7b08f00c8e1-db.gz
+0115.504 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0115.506 (0) Number of backup sets in history: 1; groups (db): 1
+0115.507 (0) Examining (for databases) backup set with group_id=0, nonce=f7b08f00c8e1, datestamp=1749669671 (Jun 11 2025 19:21:11)
+0115.508 (0) This backup set is the backup set just made, so will not be deleted.
+0115.508 (0) Number of backup sets in history: 1; groups (files): 1
+0115.509 (0) Examining (for files) backup set with nonce=f7b08f00c8e1, datestamp=1749669671 (Jun 11 2025 19:21:11)
+0115.509 (0) This backup set is the backup set just made, so will not be deleted.
+0115.524 (0) This backup set is the backup set just made, so will not be deleted.
+0115.524 (0) This backup set is the backup set just made, so will not be deleted.
+0115.524 (0) This backup set is the backup set just made, so will not be deleted.
+0115.524 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0115.526 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0115.530 (0) Resume backup (f7b08f00c8e1, 0): finish run
+0115.535 (0) Decremented the semaphore (fd) by 1
+0115.538 (0) Semaphore (fd) unlocked
+0115.541 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0115.548 (0) No email will/can be sent - the user has not configured an email address.
+0115.549 (0) The backup succeeded and is now complete
