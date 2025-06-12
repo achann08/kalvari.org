@@ -12,9 +12,6 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 // Register Customizer
 require_once get_template_directory() . '/inc/customizer.php';
 
-// Load custom widgets
-// require get_template_directory() . '/inc/widget/custom-widget.php';
-
 function dominus_vobiscum_scripts(){
     wp_enqueue_script('dominus_vobiscum_enqueue_scripts', get_template_directory_uri() . '/build/index.js', array('jquery'), '1.0', true);
     wp_enqueue_style('dominus_vobiscum_enqueue_style', get_template_directory_uri() . '/build/style-index.css');
@@ -31,7 +28,6 @@ function dominus_vobiscum_scripts(){
 
 }
 add_action( 'wp_enqueue_scripts', 'dominus_vobiscum_scripts' );
-
 
 function dominus_vobiscum_config(){
     register_nav_menus(
@@ -195,3 +191,34 @@ function dominus_vobiscum_posts_per_page( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'dominus_vobiscum_posts_per_page', 1 );
+
+// Daftarkan folder widget tema
+// functions.php
+
+// 1. Daftarkan folder widget
+function dominus_register_widget_folders($folders) {
+    $folders[] = get_template_directory() . '/inc/widgets/';
+    return $folders;
+}
+add_filter('siteorigin_widgets_widget_folders', 'dominus_register_widget_folders');
+
+// 2. Tambah tab Custom Widgets (prioritas tinggi)
+add_filter('siteorigin_panels_widget_dialog_tabs', function($tabs) {
+    $tabs[] = [
+        'title'  => __('Custom Widgets', 'dominus-vobiscum'),
+        'filter' => ['groups' => ['dominus-vobiscum']],
+    ];
+    return $tabs;
+}, 5); // Prioritas 5 (lebih tinggi)
+
+// 3. Pastikan widget terdaftar dengan grup yang benar
+add_filter('siteorigin_panels_widgets', function($widgets) {
+    // Tambahkan grup ke semua widget custom
+    foreach($widgets as $class => $settings) {
+        if(strpos($class, 'Hello_World') !== false) {
+            $widgets[$class]['groups'] = ['dominus-vobiscum'];
+            $widgets[$class]['icon'] = 'dashicons dashicons-smiley';
+        }
+    }
+    return $widgets;
+}, 20);
